@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="770.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardController">
+   <children>
+      <VBox layoutX="14.0" layoutY="16.0" prefHeight="738.0" prefWidth="249.0" style="-fx-background-color: #2980b9; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="lblHome" alignment="CENTER" prefHeight="61.0" prefWidth="222.0" text="INSPIRA">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9684210419654846" green="0.9684210419654846" blue="0.9684210419654846" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.7263157963752747" green="0.09684210270643234" blue="0.6423859596252441" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="678.0" prefWidth="198.0">
+               <children>
+                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="61.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Home">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCustomer" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Customer">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER_CIRCLE" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEmployee" layoutX="10.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Employee">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USERS" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEvent" layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnEventOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Event">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnBooking" layoutX="10.0" layoutY="208.0" mnemonicParsing="false" onAction="#btnBookingOnAction" prefHeight="61.0" prefWidth="252.0" style="-fx-background-color: #2980b9;" text="Booking">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSupplier" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Supplier">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnItem" layoutX="10.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #2980b9;" text="Item">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEventSupplier" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#btnEventSupplierOnAction" prefHeight="62.0" prefWidth="252.0" style="-fx-background-color: #2980b9;" text="Event Supplier Details">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnService" layoutX="10.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnServiceOnAction" prefHeight="62.0" prefWidth="253.0" style="-fx-background-color: #2980b9;" text="Service">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnBookingService" layoutX="10.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnBookingServiceOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Booking Service Details">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnPayment" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Payment">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="bodyPane" layoutX="272.0" layoutY="17.0" prefHeight="738.0" prefWidth="1066.0" style="-fx-background-radius: 10; -fx-background-color: #BFECFF;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/FirstRegisterPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SecondRegisterPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/db/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/EventDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/CustomerTM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/EventTM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/BookingModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icon-inspira.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icons8-back-button-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/login-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/register-page-new.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/second-register-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/style/Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/FirstRegisterPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/LogInPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/SecondRegisterPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2oIX9PoL7XyacqjG7WUgxJe84a4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppInitializer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Coursework-oop/Inspira-1st-Semester-Project/src/main/resources/image&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Coursework-oop\Inspira-1st-Semester-Project\src\main\resources\image" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="" />
+      <created>1730557912737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730557912737</updated>
+      <workItem from="1730557913632" duration="1971000" />
+      <workItem from="1730560454995" duration="74000" />
+      <workItem from="1730560830255" duration="1390000" />
+      <workItem from="1730595978181" duration="8712000" />
+      <workItem from="1730619794653" duration="8752000" />
+      <workItem from="1730633703942" duration="163000" />
+      <workItem from="1730633956821" duration="53000" />
+      <workItem from="1730634078148" duration="4880000" />
+      <workItem from="1730639055662" duration="229000" />
+      <workItem from="1730639910449" duration="6641000" />
+      <workItem from="1730650893126" duration="2566000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
