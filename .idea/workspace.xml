@@ -4,59 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/FirstRegisterPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SecondRegisterPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/db/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/CustomerDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/EventDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/CustomerTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/EventTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/BookingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icon-inspira.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icons8-back-button-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/login-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/register-page-new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/second-register-page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/style/Style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/FirstRegisterPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/LogInPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/SecondRegisterPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" afterDir="false" />
+    <list default="true" id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="init commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sachintha-Prabashana&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sachintha-Prabashana/Inspira-Event-Planning-System-1st-Sem-Project-.git&quot;,
+    &quot;accountId&quot;: &quot;8d5982d3-3ea3-4b5f-85bd-e07c51f2f687&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -147,11 +112,35 @@
       <workItem from="1730634078148" duration="4880000" />
       <workItem from="1730639055662" duration="229000" />
       <workItem from="1730639910449" duration="6641000" />
-      <workItem from="1730650893126" duration="2566000" />
+      <workItem from="1730650893126" duration="3310000" />
+      <workItem from="1730689615775" duration="1806000" />
+      <workItem from="1730692472004" duration="1145000" />
+      <workItem from="1730720614555" duration="2763000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1730653759064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730653759064</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1730653890765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730653890765</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>

@@ -296,7 +296,22 @@ public class CustomerController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        CustomerDto customerDto = getFieldValues();
 
+        if(customerDto != null) {
+            try{
+                boolean isUpdate = customerModel.updateCustomer(customerDto);
+
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.INFORMATION, "Customer updated...!").show();
+                    refreshPage();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Fail to update customer...!").show();
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -319,8 +334,4 @@ public class CustomerController implements Initializable {
             btnCustomerRepo.setDisable(false);
         }
     }
-
-
-
-
 }

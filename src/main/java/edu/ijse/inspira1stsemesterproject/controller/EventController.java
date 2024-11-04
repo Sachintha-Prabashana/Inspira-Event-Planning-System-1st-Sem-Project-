@@ -162,22 +162,22 @@ public class EventController implements Initializable {
         }catch(Exception e){
             e.printStackTrace();
         }
-        LocalDate today = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = today.format(formatter);
+//        LocalDate today = LocalDate.now();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        String formattedDate = today.format(formatter);
 
         txtEventName.setText("");
         txtDescription.setText("");
         txtBudget.setText("");
         txtVenue.setText("");
-        txtDate.setText(formattedDate);
+        txtDate.setText("");
 
         // Get the current time and format it as a Time object
-        LocalTime localTime = LocalTime.now();
-        Time currentTime = Time.valueOf(localTime); // Convert LocalTime to Time
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String formattedTime = localTime.format(timeFormatter);
-        txtTime.setText(formattedTime);
+//        LocalTime localTime = LocalTime.now();
+//        Time currentTime = Time.valueOf(localTime); // Convert LocalTime to Time
+//        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+//        String formattedTime = localTime.format(timeFormatter);
+        txtTime.setText("");
 
         btnSave.setDisable(false);
         btnSearch.setDisable(true);
@@ -271,11 +271,13 @@ public class EventController implements Initializable {
         String description = txtDescription.getText();
         Double budget = Double.valueOf(txtBudget.getText());
         String venue = txtVenue.getText();
-        LocalDate localEventDate = LocalDate.parse(txtDate.getText(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        LocalTime localEventTime = LocalTime.parse(txtTime.getText(), DateTimeFormatter.ofPattern("HH:mm:ss"));
-
-        Date eventDate = Date.valueOf(localEventDate);
-        Time eventTime = Time.valueOf(localEventTime);
+//        LocalDate localEventDate = LocalDate.parse(txtDate.getText(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+//        LocalTime localEventTime = LocalTime.parse(txtTime.getText(), DateTimeFormatter.ofPattern("HH:mm:ss"));
+//
+//        Date eventDate = Date.valueOf(localEventDate);
+//        Time eventTime = Time.valueOf(localEventTime);
+        Date eventDate = Date.valueOf(txtDate.getText());
+        Time eventTime = Time.valueOf(txtTime.getText());
 
         return new EventDto(eventId, eventType, eventName, description, budget, venue, eventDate, eventTime);
     }
