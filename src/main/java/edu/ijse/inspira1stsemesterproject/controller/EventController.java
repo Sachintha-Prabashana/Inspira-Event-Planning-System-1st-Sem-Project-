@@ -256,7 +256,24 @@ public class EventController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        String eventId = lblEventIdData.getText();
 
+        try{
+            EventDto eventDto = eventModel.searchEvent(eventId);
+
+            if(eventDto != null){
+                lblEventIdData.setText(eventDto.getEventId());
+                cmbEventType.setAccessibleText(eventDto.getEventType());
+                txtEventName.setText(eventDto.getEventName());
+                txtDescription.setText(eventDto.getDescription());
+                txtBudget.setText(eventDto.getBudget().toString());
+                txtVenue.setText(eventDto.getVenue());
+                txtDate.setText(eventDto.getDate().toString());
+                txtTime.setText(eventDto.getTime().toString());
+            }
+        }catch (Exception e){
+
+        }
     }
 
     @FXML

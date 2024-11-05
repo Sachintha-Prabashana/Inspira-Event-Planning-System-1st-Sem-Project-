@@ -51,7 +51,7 @@
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </TextField>
-      <TableView fx:id="tblCustomer" layoutX="34.0" layoutY="296.0" minHeight="426.0" minWidth="997.0" onMouseClicked="#tblCustomerOnClick" prefHeight="426.0" prefWidth="997.0">
+      <TableView fx:id="tblCustomer" layoutX="34.0" layoutY="341.0" minHeight="381.0" minWidth="997.0" onMouseClicked="#tblCustomerOnClick" prefHeight="381.0" prefWidth="998.0">
          <columns>
             <TableColumn fx:id="clmCustId" prefWidth="88.79995346069336" text="Customer Id" />
             <TableColumn fx:id="clmDate" prefWidth="107.19998168945312" text="Date" />
@@ -123,5 +123,10 @@
          </font>
       </Label>
       <JFXComboBox fx:id="cmbCustTitle" layoutX="392.0" layoutY="38.0" prefHeight="31.0" prefWidth="130.0" promptText="Choose a title" stylesheets="@../style/Style.css" />
+      <Button fx:id="btnSendMail" layoutX="892.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnSendMailOnAction" prefHeight="35.0" prefWidth="139.0" style="-fx-background-radius: 10; -fx-background-color: #41B3A2;" text="Send Mail">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -6,6 +6,7 @@ module edu.ijse.inspira1stsemesterproject {
     requires java.desktop;
     requires de.jensd.fx.glyphs.fontawesome;
     requires com.jfoenix;
+    requires java.mail;
 
 
     opens edu.ijse.inspira1stsemesterproject.controller to javafx.fxml;

@@ -6,18 +6,22 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
     private Button btnLogin;
@@ -56,6 +60,15 @@ public class LoginController {
     private TextField txtUsername;
 
     private final UserModel userModel = new UserModel();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loginPane.setOnKeyPressed(e -> {
+            if(e.getCode() == KeyCode.ENTER){
+                btnLogin.fire();
+            }
+        });
+    }
 
     @FXML
     void btnLoginOnAction(ActionEvent event) {

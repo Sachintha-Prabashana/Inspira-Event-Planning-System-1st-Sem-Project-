@@ -57,6 +57,24 @@ public class EventModel {
     }
 
     public boolean deleteEvent(String eventId) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("delete from event where event_id=?", eventId);
+        return CrudUtil.execute("delete from event where event_id = ?", eventId);
+    }
+
+    public EventDto searchEvent(String eventId) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("select * from event where event_id = ?", eventId);
+
+        if(resultSet.next()){
+            return new EventDto(
+                    resultSet.getString("event_id"),
+                    resultSet.getString("event_type"),
+                    resultSet.getString("event_name"),
+                    resultSet.getString("description"),
+                    resultSet.getDouble("budget"),
+                    resultSet.getString("venue"),
+                    resultSet.getDate("event_date"),
+                    resultSet.getTime("event_time")
+            );
+        }
+        return null;
     }
 }

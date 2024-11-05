@@ -7,11 +7,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -311,6 +319,40 @@ public class CustomerController implements Initializable {
             }catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void btnSendMailOnAction(ActionEvent actionEvent) {
+        CustomerTM selectedItem = tblCustomer.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            new Alert(Alert.AlertType.WARNING, "Please select customer..!");
+            return;
+        }
+
+        try{
+            // Load the mail dialog from FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SendMailView.fxml"));
+            Parent load = loader.load();
+
+            SendMailController sendMailController = loader.getController();
+
+            String email = selectedItem.getEmail();
+            sendMailController.setCustomerEmail(email);
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(load));
+            stage.setTitle("Send email");
+
+            // Set window as modal
+            stage.initModality(Modality.APPLICATION_MODAL);
+
+            Window underWindow = btnUpdate.getScene().getWindow();
+            stage.initOwner(underWindow);
+
+            stage.showAndWait();
+
+        }catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
