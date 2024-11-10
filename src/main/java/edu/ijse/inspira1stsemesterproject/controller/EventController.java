@@ -129,6 +129,12 @@ public class EventController implements Initializable {
 
     private final EventModel eventModel = new EventModel();
 
+    private static final String descriptionPattern = "^[A-Za-z.,& ]+$";
+    private static final String budgetPattern = "^[0-9. ]+$";
+    private static final String venuePattern = "^[A-Za-z ]+$";
+    private static final String datePattern = "^(\\d{4})[-/](0[1-9]|1[0-2])[-/](0[1-9]|[12][0-9]|3[01])$";
+    private static final String timePattern = "^([01]?[0-9]|2[0-3]):[0-5][0-9]( ?[AaPp][Mm])?$";
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCellValues();
@@ -162,21 +168,12 @@ public class EventController implements Initializable {
         }catch(Exception e){
             e.printStackTrace();
         }
-//        LocalDate today = LocalDate.now();
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//        String formattedDate = today.format(formatter);
 
         txtEventName.setText("");
         txtDescription.setText("");
         txtBudget.setText("");
         txtVenue.setText("");
         txtDate.setText("");
-
-        // Get the current time and format it as a Time object
-//        LocalTime localTime = LocalTime.now();
-//        Time currentTime = Time.valueOf(localTime); // Convert LocalTime to Time
-//        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-//        String formattedTime = localTime.format(timeFormatter);
         txtTime.setText("");
 
         btnSave.setDisable(false);
@@ -188,7 +185,7 @@ public class EventController implements Initializable {
     }
 
     private void refreshTable() throws SQLException, ClassNotFoundException {
-        ArrayList<EventDto> eventDtos = eventModel.getAllCustomers();
+        ArrayList<EventDto> eventDtos = eventModel.getAllEvents();
         ObservableList<EventTM> eventTms = FXCollections.observableArrayList();
 
             for(EventDto eventDto : eventDtos){
@@ -232,26 +229,29 @@ public class EventController implements Initializable {
     }
 
     @FXML
-    void btnResetOnAction(ActionEvent event) {
-
+    void btnResetOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        refreshTable();
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         EventDto eventDto = getFieldvalues();
 
-        try{
-            boolean isSaved = eventModel.saveEvent(eventDto);
+        if(eventDto != null){
+            try{
+                boolean isSaved = eventModel.saveEvent(eventDto);
 
-            if (isSaved) {
-                new Alert(Alert.AlertType.INFORMATION, "Event saved successfully!").show();
-                refreshPage();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Failed to save Event.").show();
+                if (isSaved) {
+                    new Alert(Alert.AlertType.INFORMATION, "Event saved successfully!").show();
+                    refreshPage();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Failed to save Event.").show();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
             }
-        }catch (Exception e){
-            e.printStackTrace();
         }
+        new Alert(Alert.AlertType.ERROR, "Venue is already booked for this date and time.!").show();
     }
 
     @FXML
@@ -281,7 +281,7 @@ public class EventController implements Initializable {
 
     }
 
-    private EventDto getFieldvalues() {
+    private EventDto getFieldvalues() throws SQLException, ClassNotFoundException {
         String eventId = lblEventIdData.getText();
         String eventType = cmbEventType.getSelectionModel().getSelectedItem();
         String eventName = txtEventName.getText();
@@ -296,7 +296,13 @@ public class EventController implements Initializable {
         Date eventDate = Date.valueOf(txtDate.getText());
         Time eventTime = Time.valueOf(txtTime.getText());
 
-        return new EventDto(eventId, eventType, eventName, description, budget, venue, eventDate, eventTime);
+        boolean isValid = eventModel.checkValidateEvent(venue,eventDate,eventTime);
+
+        if(isValid){
+            return new EventDto(eventId, eventType, eventName, description, budget, venue, eventDate, eventTime);
+        }
+        return null;
+
     }
 
     public void tblEventOnClick(MouseEvent mouseEvent) {

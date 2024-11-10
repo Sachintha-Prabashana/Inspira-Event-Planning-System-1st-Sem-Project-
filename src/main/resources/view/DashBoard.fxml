@@ -10,12 +10,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="770.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardController">
+<AnchorPane prefHeight="770.0" prefWidth="1350.0" style="-fx-background-color: #EAF2F8;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardController">
    <children>
       <VBox layoutX="14.0" layoutY="16.0" prefHeight="738.0" prefWidth="249.0" style="-fx-background-color: #2980b9; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="lblHome" alignment="CENTER" prefHeight="61.0" prefWidth="222.0" text="INSPIRA">
+            <Label fx:id="lblHome" alignment="CENTER" prefHeight="61.0" prefWidth="251.0" text="INSPIRA">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -32,9 +34,6 @@
                      </stops>
                   </LinearGradient>
                </textFill>
-               <font>
-                  <Font name="Comic Sans MS Bold" size="24.0" />
-               </font>
             </Label>
             <VBox prefHeight="678.0" prefWidth="198.0">
                <children>
@@ -118,7 +117,7 @@
                         <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
-                  <Button fx:id="btnPayment" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Payment">
+                  <Button fx:id="btnPayment" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2980b9;" text="Payment">
                      <font>
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
@@ -130,6 +129,6 @@
             </VBox>
          </children>
       </VBox>
-      <AnchorPane fx:id="bodyPane" layoutX="272.0" layoutY="17.0" prefHeight="738.0" prefWidth="1066.0" style="-fx-background-radius: 10; -fx-background-color: #BFECFF;" />
+      <AnchorPane fx:id="bodyPane" layoutX="272.0" layoutY="17.0" prefHeight="738.0" prefWidth="1066.0" style="-fx-background-radius: 10; -fx-background-color: white;" />
    </children>
 </AnchorPane>

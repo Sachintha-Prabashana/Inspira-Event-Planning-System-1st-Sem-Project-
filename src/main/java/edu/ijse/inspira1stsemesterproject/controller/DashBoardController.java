@@ -68,6 +68,7 @@ public class DashBoardController {
 
     @FXML
     void btnEmployeeOnAction(ActionEvent event) {
+        loadUI("/view/EmployeeForm.fxml");
 
     }
 
@@ -103,7 +104,7 @@ public class DashBoardController {
 
     @FXML
     void btnSupplierOnAction(ActionEvent event) {
-
+        loadUI("/view/SupplierForm.fxml");
     }
 
     private void loadUI(String resource) {

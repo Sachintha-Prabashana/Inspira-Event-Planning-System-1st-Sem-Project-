@@ -1,10 +1,10 @@
 package edu.ijse.inspira1stsemesterproject.model;
 
+import edu.ijse.inspira1stsemesterproject.db.DBConnection;
 import edu.ijse.inspira1stsemesterproject.dto.EventDto;
 import edu.ijse.inspira1stsemesterproject.util.CrudUtil;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class EventModel {
@@ -21,7 +21,7 @@ public class EventModel {
         return "E001";
     }
 
-    public ArrayList<EventDto> getAllCustomers() throws SQLException, ClassNotFoundException {
+    public ArrayList<EventDto> getAllEvents() throws SQLException, ClassNotFoundException {
         ResultSet rst = CrudUtil.execute("select * from event");
 
         ArrayList<EventDto> eventDtos = new ArrayList<>();
@@ -77,4 +77,26 @@ public class EventModel {
         }
         return null;
     }
+
+    public boolean checkValidateEvent(String venue, Date eventDate, Time eventTime) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT COUNT(*) FROM Event WHERE venue = ? AND event_date = ? AND event_time = ?";
+
+        // Get connection from DBConnection instance
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        // Set parameters for venue, eventDate, and eventTime
+        preparedStatement.setString(1, venue);
+        preparedStatement.setDate(2, new java.sql.Date(eventDate.getTime())); // Convert java.util.Date to java.sql.Date
+        preparedStatement.setTime(3, eventTime);
+
+        // Execute query and check if the count is zero
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getInt(1) == 0; // Returns true if no matching event is found
+        }
+
+        return false; // Default return if no results found
+    }
+
 }
