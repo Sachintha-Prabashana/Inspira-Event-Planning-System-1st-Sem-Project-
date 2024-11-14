@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="737.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.EmployeeFormController">
    <children>
       <Label fx:id="lblEmployeeId" layoutX="38.0" layoutY="32.0" text="Employee Id">
@@ -52,7 +51,7 @@
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbJobPosition" layoutX="383.0" layoutY="29.0" prefHeight="26.0" prefWidth="135.0" promptText="Select job position" />
+      <JFXComboBox fx:id="cmbJobPosition" layoutX="367.0" layoutY="25.0" prefHeight="31.0" prefWidth="151.0" promptText="Select job position" stylesheets="@../style/Style.css" />
       <Label fx:id="lblDate" layoutX="875.0" layoutY="30.0" prefHeight="22.0" prefWidth="42.0" text="Date">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
@@ -73,7 +72,7 @@
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbBookingId" layoutX="383.0" layoutY="182.0" prefHeight="26.0" prefWidth="135.0" promptText="Select Booking Id" />
+      <JFXComboBox fx:id="cmbBookingId" layoutX="367.0" layoutY="180.0" prefHeight="31.0" prefWidth="151.0" promptText="Select Booking Id" stylesheets="@../style/Style.css" />
       <Label fx:id="lblEmail" layoutX="38.0" layoutY="133.0" text="Email">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
@@ -104,7 +103,7 @@
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="tblEmployee" layoutX="39.0" layoutY="268.0" prefHeight="441.0" prefWidth="991.0">
+      <TableView fx:id="tblEmployee" layoutX="39.0" layoutY="268.0" onMouseClicked="#tblEmployeeOnClick" prefHeight="441.0" prefWidth="991.0">
         <columns>
           <TableColumn fx:id="clmEmployeeId" prefWidth="101.59997177124023" text="Employee Id" />
           <TableColumn fx:id="clmFirstName" prefWidth="143.1999969482422" text="First Name" />

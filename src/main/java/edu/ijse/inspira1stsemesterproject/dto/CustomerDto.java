@@ -18,4 +18,8 @@ public class CustomerDto {
     private String nic;
     private String email;
     private Date registrationDate;
+
+    public String concatName(){
+        return firstName + " " + lastName;
+    }
 }

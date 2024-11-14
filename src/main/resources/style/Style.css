@@ -21,7 +21,7 @@
     -fx-text-fill-color: #2B2B2B;
 }
 
-#cmbEventType , #cmbCustTitle{
+#cmbEventType , #cmbCustTitle , #cmbBookingId , #cmbCustomerId , #cmbItemId , #cmbServiceType , #cmbSupplierId , #cmbJobPosition{
     -fx-font-family: 'Comic Sans MS';
     -fx-font-size: 14;
 }

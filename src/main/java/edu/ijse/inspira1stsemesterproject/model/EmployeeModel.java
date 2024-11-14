@@ -66,4 +66,18 @@ public class EmployeeModel {
                 dto.getBookingId()
         );
     }
+
+    public boolean updateCustomer(EmployeeDto employeeDto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute(
+                "update employee set  first_name = ?,  last_name = ?, position = ?, Join_date = ?, salary = ?, email = ?, booking_id  = ? where employee_id = ?",
+                employeeDto.getFirstName(),
+                employeeDto.getLastName(),
+                employeeDto.getJobPosition(),
+                employeeDto.getJoinDate(),
+                employeeDto.getSalary(),
+                employeeDto.getEmail(),
+                employeeDto.getBookingId(),
+                employeeDto.getEmployeeId()
+        );
+    }
 }

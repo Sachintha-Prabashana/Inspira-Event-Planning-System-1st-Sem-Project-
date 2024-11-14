@@ -1,15 +1,21 @@
 package edu.ijse.inspira1stsemesterproject.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import edu.ijse.inspira1stsemesterproject.dto.tm.ServiceTM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ServiceController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ServiceController implements Initializable {
 
     @FXML
     private Button btnDelete;
@@ -24,13 +30,13 @@ public class ServiceController {
     private Button btnUpdate;
 
     @FXML
-    private TableColumn<?, ?> clmPrice;
+    private TableColumn<ServiceTM, Double> clmPrice;
 
     @FXML
-    private TableColumn<?, ?> clmServiceId;
+    private TableColumn<ServiceTM, String> clmServiceId;
 
     @FXML
-    private TableColumn<?, ?> clmServiceType;
+    private TableColumn<ServiceTM, String> clmServiceType;
 
     @FXML
     private JFXComboBox<String> cmbServiceType;
@@ -53,7 +59,17 @@ public class ServiceController {
     @FXML
     private TextField txtPrice;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setCellValues();
 
+    }
+
+    private void setCellValues() {
+        clmServiceId.setCellValueFactory(new PropertyValueFactory<>("serviceId"));
+        clmServiceType.setCellValueFactory(new PropertyValueFactory<>("serviceType"));
+        clmPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+    }
 
 
     @FXML
@@ -83,5 +99,4 @@ public class ServiceController {
     void btnUpdateOnAction(ActionEvent event) {
 
     }
-
 }

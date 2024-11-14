@@ -69,4 +69,33 @@ public class CustomerModel {
                 customerDto.getCustomerId()
         );
     }
+
+    public CustomerDto findById(String selectedCustomerId) throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.execute("select * from customer where customer_id=?", selectedCustomerId);
+
+        if (rst.next()) {
+            return new CustomerDto(
+                  rst.getString(1),
+                  rst.getString(2),
+                  rst.getString(3),
+                  rst.getString(4),
+                  rst.getString(5),
+                  rst.getString(6),
+                  rst.getDate(7)
+            );
+        }
+        return null;
+    }
+
+    public ArrayList<String> getAllCustomerIds() throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.execute("select customer_id from customer");
+
+        ArrayList<String> customerIds = new ArrayList<>();
+
+        while (rst.next()) {
+            customerIds.add(rst.getString(1));
+        }
+
+        return customerIds;
+    }
 }

@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 
 public class ServiceTM {
-    private String service_id;
-    private String service_type;
+    private String serviceId;
+    private String serviceType;
     private double price;
 }

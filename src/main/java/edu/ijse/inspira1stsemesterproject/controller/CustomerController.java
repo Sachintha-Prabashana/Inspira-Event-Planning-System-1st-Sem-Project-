@@ -298,11 +298,6 @@ public class CustomerController implements Initializable {
     }
 
     @FXML
-    void btnSearchOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnUpdateOnAction(ActionEvent event) {
         CustomerDto customerDto = getFieldValues();
 

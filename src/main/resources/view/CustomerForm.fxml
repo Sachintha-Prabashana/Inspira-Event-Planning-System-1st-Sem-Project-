@@ -16,7 +16,7 @@
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblCustIdData" layoutX="131.0" layoutY="44.0" prefHeight="22.0" prefWidth="70.0">
+      <Label fx:id="lblCustIdData" layoutX="131.0" layoutY="44.0" prefHeight="22.0" prefWidth="82.0">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
          </font>
@@ -62,11 +62,6 @@
             <TableColumn fx:id="clmEmail" prefWidth="231.19998779296884" text="Email" />
          </columns>
       </TableView>
-      <Button fx:id="btnSearch" layoutX="217.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="82.0" style="-fx-background-radius: 10; -fx-background-color: #0D92F4;" text="Search">
-         <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
-         </font>
-      </Button>
       <Button fx:id="btnSave" layoutX="931.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #6EC207;" text="Save">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />

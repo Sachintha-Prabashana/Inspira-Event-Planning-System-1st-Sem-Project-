@@ -1,4 +1,5 @@
 package edu.ijse.inspira1stsemesterproject.dto.tm;
+import javafx.scene.control.Button;
 import lombok.*;
 
 import java.sql.Date;
@@ -12,12 +13,19 @@ import java.sql.Time;
 
 public class EventTM {
     private String eventId;
+    private String bookingId;
+    private String itemId;
     private String eventType;
     private String eventName;
-    private String description;
-    private Double budget;
+    private double budget;
     private String venue;
     private Date date;
-    private Time time;
+    private String supplierId;
+    private String itemName;
+    private int quantity;
+    private double unitPrice;
+    private double totalPrice;
+    private Button action;
+
 
 }

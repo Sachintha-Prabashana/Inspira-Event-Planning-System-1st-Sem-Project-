@@ -23,4 +23,15 @@ public class CrudUtil {
             return (T) ((Boolean)isDone);
         }
     }
+    public static void setAutoCommit(boolean autoCommit) throws SQLException, ClassNotFoundException {
+        DBConnection.getInstance().getConnection().setAutoCommit(autoCommit);
+    }
+
+    public static void commit() throws SQLException, ClassNotFoundException {
+        DBConnection.getInstance().getConnection().commit();
+    }
+
+    public static void rollback() throws SQLException, ClassNotFoundException {
+        DBConnection.getInstance().getConnection().rollback();
+    }
 }

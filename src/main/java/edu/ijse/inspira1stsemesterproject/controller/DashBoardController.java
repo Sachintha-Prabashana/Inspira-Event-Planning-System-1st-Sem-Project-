@@ -53,6 +53,7 @@ public class DashBoardController {
 
     @FXML
     void btnBookingOnAction(ActionEvent event) {
+        loadUI("/view/BookingForm.fxml");
 
     }
 
@@ -79,6 +80,7 @@ public class DashBoardController {
 
     @FXML
     void btnEventSupplierOnAction(ActionEvent event) {
+        loadUI("/view/AddItemsToEventForm(Tran).fxml");
 
     }
 
@@ -89,7 +91,7 @@ public class DashBoardController {
 
     @FXML
     void btnItemOnAction(ActionEvent event) {
-
+        loadUI("/view/ItemForm.fxml");
     }
 
     @FXML
@@ -99,7 +101,7 @@ public class DashBoardController {
 
     @FXML
     void btnServiceOnAction(ActionEvent event) {
-
+        loadUI("/view/ServiceForm.fxml");
     }
 
     @FXML

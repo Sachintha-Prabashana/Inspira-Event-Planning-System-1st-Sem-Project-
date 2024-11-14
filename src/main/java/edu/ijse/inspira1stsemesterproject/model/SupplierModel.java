@@ -37,4 +37,30 @@ public class SupplierModel {
         }
         return supplierDtos;
     }
+
+    public ArrayList<String> getAllSupplierIds() throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.execute("select supplier_id from supplier");
+
+        ArrayList<String> supplierIds = new ArrayList<>();
+
+        while (rst.next()) {
+            supplierIds.add(rst.getString(1));
+        }
+
+        return supplierIds;
+    }
+
+    public SupplierDto findById(String selectedSupplierId) throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.execute("select * from supplier where supplier_id=?", selectedSupplierId);
+
+        if (rst.next()) {
+            return new SupplierDto(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3)
+            );
+        }
+        return null;
+
+    }
 }

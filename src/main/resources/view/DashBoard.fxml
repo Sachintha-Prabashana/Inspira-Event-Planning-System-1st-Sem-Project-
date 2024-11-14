@@ -74,7 +74,7 @@
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                        <FontAwesomeIconView glyphName="CALENDARCHECK" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
                   <Button fx:id="btnSupplier" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Supplier">
@@ -82,7 +82,7 @@
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                        <FontAwesomeIconView glyphName="TRUCK" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
                   <Button fx:id="btnItem" layoutX="10.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #2980b9;" text="Item">
@@ -90,7 +90,7 @@
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                        <FontAwesomeIconView glyphName="TAG" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
                   <Button fx:id="btnEventSupplier" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#btnEventSupplierOnAction" prefHeight="62.0" prefWidth="252.0" style="-fx-background-color: #2980b9;" text="Event Supplier Details">
@@ -106,7 +106,7 @@
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                        <FontAwesomeIconView glyphName="CONCIERGE_BELL" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
                   <Button fx:id="btnBookingService" layoutX="10.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnBookingServiceOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Booking Service Details">
@@ -122,7 +122,7 @@
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
+                        <FontAwesomeIconView glyphName="CREDIT_CARD" selectionFill="#f2ebeb" />
                      </graphic>
                   </Button>
                </children>

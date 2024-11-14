@@ -1,12 +1,8 @@
 package edu.ijse.inspira1stsemesterproject.controller;
 
 import com.jfoenix.controls.JFXComboBox;
-import edu.ijse.inspira1stsemesterproject.dto.CustomerDto;
 import edu.ijse.inspira1stsemesterproject.dto.EmployeeDto;
-import edu.ijse.inspira1stsemesterproject.dto.EventDto;
-import edu.ijse.inspira1stsemesterproject.dto.tm.BookingTM;
 import edu.ijse.inspira1stsemesterproject.dto.tm.EmployeeTM;
-import edu.ijse.inspira1stsemesterproject.dto.tm.EventTM;
 import edu.ijse.inspira1stsemesterproject.model.BookingModel;
 import edu.ijse.inspira1stsemesterproject.model.EmployeeModel;
 import javafx.collections.FXCollections;
@@ -16,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Date;
@@ -205,6 +202,13 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
+        cmbJobPosition.setValue(null);
+        cmbJobPosition.setPromptText("Select job position");
+
+        cmbBookingId.setValue(null);
+        cmbBookingId.setPromptText("Select booking id");
+
+        refreshPage();
 
     }
 
@@ -272,7 +276,22 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        EmployeeDto employeeDto = getFieldValues();
 
+        if(employeeDto != null) {
+            try{
+                boolean isUpdate = employeeModel.updateCustomer(employeeDto);
+
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.INFORMATION, "Employee updated...!").show();
+                    refreshPage();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Fail to update employee...!").show();
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void loadBookingIds() throws SQLException, ClassNotFoundException {
@@ -291,4 +310,22 @@ public class EmployeeFormController implements Initializable {
         alert.showAndWait();
     }
 
+    public void tblEmployeeOnClick(MouseEvent mouseEvent) {
+        EmployeeTM selectedItem = tblEmployee.getSelectionModel().getSelectedItem();
+
+        if (selectedItem != null) {
+            lblEmployeeIdData.setText(selectedItem.getEmployeeId());
+            txtFirstName.setText(selectedItem.getFirstName());
+            txtLastName.setText(selectedItem.getLastName());
+            cmbJobPosition.setValue(selectedItem.getJobPosition());
+            lblDateData.setText(selectedItem.getJoinDate().toString());
+            txtSalary.setText(String.valueOf(selectedItem.getSalary()));
+            txtEmail.setText(selectedItem.getEmail());
+            cmbBookingId.setValue(selectedItem.getBookingId());
+
+            btnSave.setDisable(true);
+            btnDelete.setDisable(false);
+            btnUpdate.setDisable(false);
+        }
+    }
 }

@@ -8,6 +8,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class EventModel {
+
+    private final EventSupplierModel  eventSupplierModel = new EventSupplierModel();
+
     public String getNextEventId() throws SQLException, ClassNotFoundException {
         ResultSet rst = CrudUtil.execute("select event_id from event order by event_id desc limit 1");
 
@@ -20,83 +23,46 @@ public class EventModel {
         }
         return "E001";
     }
-
-    public ArrayList<EventDto> getAllEvents() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.execute("select * from event");
-
-        ArrayList<EventDto> eventDtos = new ArrayList<>();
-
-        while (rst.next()) {
-            EventDto eventDto = new EventDto(
-                    rst.getString(1),
-                    rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4),
-                    rst.getDouble(5),
-                    rst.getString(6),
-                    rst.getDate(7),
-                    rst.getTime(8)
-
-            );
-            eventDtos.add(eventDto);
-        }
-        return eventDtos;
-    }
+    
 
     public boolean saveEvent(EventDto eventDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("insert into event values(?,?,?,?,?,?,?,?)",
-            eventDto.getEventId(),
-            eventDto.getEventType(),
-            eventDto.getEventName(),
-            eventDto.getDescription(),
-            eventDto.getBudget(),
-            eventDto.getVenue(),
-            eventDto.getDate(),
-            eventDto.getTime()
-        );
-    }
-
-    public boolean deleteEvent(String eventId) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("delete from event where event_id = ?", eventId);
-    }
-
-    public EventDto searchEvent(String eventId) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = CrudUtil.execute("select * from event where event_id = ?", eventId);
-
-        if(resultSet.next()){
-            return new EventDto(
-                    resultSet.getString("event_id"),
-                    resultSet.getString("event_type"),
-                    resultSet.getString("event_name"),
-                    resultSet.getString("description"),
-                    resultSet.getDouble("budget"),
-                    resultSet.getString("venue"),
-                    resultSet.getDate("event_date"),
-                    resultSet.getTime("event_time")
-            );
-        }
-        return null;
-    }
-
-    public boolean checkValidateEvent(String venue, Date eventDate, Time eventTime) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT COUNT(*) FROM Event WHERE venue = ? AND event_date = ? AND event_time = ?";
-
-        // Get connection from DBConnection instance
         Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        try {
+            // @autoCommit: Disables auto-commit to manually control the transaction
+            connection.setAutoCommit(false); // 1
 
-        // Set parameters for venue, eventDate, and eventTime
-        preparedStatement.setString(1, venue);
-        preparedStatement.setDate(2, new java.sql.Date(eventDate.getTime())); // Convert java.util.Date to java.sql.Date
-        preparedStatement.setTime(3, eventTime);
-
-        // Execute query and check if the count is zero
-        ResultSet resultSet = preparedStatement.executeQuery();
-        if (resultSet.next()) {
-            return resultSet.getInt(1) == 0; // Returns true if no matching event is found
+            // @isOrderSaved: Saves the order details into the orders table
+            boolean isOrderSaved = CrudUtil.execute(
+                    "insert into event values (?,?,?,?,?,?,?)",
+                    eventDto.getEventId(),
+                    eventDto.getBookingId(),
+                    eventDto.getEventType(),
+                    eventDto.getEventName(),
+                    eventDto.getBudget(),
+                    eventDto.getVenue(),
+                    eventDto.getDate()
+            );
+            // If the order is saved successfully
+            if (isOrderSaved) {
+                // @isOrderDetailListSaved: Saves the list of order details
+                boolean isOrderDetailListSaved = eventSupplierModel.saveEventSuppliersList(eventDto.getEventSupplierDtos());
+                if (isOrderDetailListSaved) {
+                    // @commit: Commits the transaction if both order and details are saved successfully
+                    connection.commit(); // 2
+                    return true;
+                }
+            }
+            // @rollback: Rolls back the transaction if order details saving fails
+            connection.rollback(); // 3
+            return false;
+        } catch (Exception e) {
+            // @catch: Rolls back the transaction in case of any exception
+            connection.rollback();
+            return false;
+        } finally {
+            // @finally: Resets auto-commit to true after the operation
+            connection.setAutoCommit(true); // 4
         }
-
-        return false; // Default return if no results found
     }
 
 }
