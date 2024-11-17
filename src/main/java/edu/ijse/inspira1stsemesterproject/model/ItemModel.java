@@ -80,4 +80,33 @@ public class ItemModel {
 
         );
     }
+
+    public boolean deleteItem(String itemId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("delete from item where item_id=?", itemId);
+    }
+
+    public boolean saveItem(ItemDto itemDto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("insert into service values(?,?,?,?,?,?)",
+                itemDto.getItemId(),
+                itemDto.getItemName(),
+                itemDto.getItemDescription(),
+                itemDto.getItemPrice(),
+                itemDto.getItemQuantity(),
+                itemDto.getSupplierId()
+
+
+        );
+    }
+
+    public boolean updateItem(ItemDto itemDto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute(
+                "update item set  item_name = ?, description = ? , cost = ?, quantity = ?, supplier_id = ? where item_id = ?",
+                itemDto.getItemName(),
+                itemDto.getItemDescription(),
+                itemDto.getItemPrice(),
+                itemDto.getItemQuantity(),
+                itemDto.getSupplierId(),
+                itemDto.getItemId()
+        );
+    }
 }

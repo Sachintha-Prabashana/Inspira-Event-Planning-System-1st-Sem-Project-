@@ -3,50 +3,25 @@ package edu.ijse.inspira1stsemesterproject.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashBoardController {
+public class DashBoardController implements Initializable {
 
     @FXML
     private AnchorPane bodyPane;
 
     @FXML
-    private Button btnBooking;
+    private AnchorPane dashBoardPane;
 
-    @FXML
-    private Button btnBookingService;
-
-    @FXML
-    private Button btnCustomer;
-
-    @FXML
-    private Button btnEmployee;
-
-    @FXML
-    private Button btnEvent;
-
-    @FXML
-    private Button btnEventSupplier;
-
-    @FXML
-    private Button btnHome;
-
-    @FXML
-    private Button btnItem;
-
-    @FXML
-    private Button btnPayment;
-
-    @FXML
-    private Button btnService;
-
-    @FXML
-    private Button btnSupplier;
 
     @FXML
     private Label lblHome;
@@ -54,11 +29,6 @@ public class DashBoardController {
     @FXML
     void btnBookingOnAction(ActionEvent event) {
         loadUI("/view/BookingForm.fxml");
-
-    }
-
-    @FXML
-    void btnBookingServiceOnAction(ActionEvent event) {
 
     }
 
@@ -75,18 +45,8 @@ public class DashBoardController {
 
     @FXML
     void btnEventOnAction(ActionEvent event) {
+
         loadUI("/view/EventForm.fxml");
-    }
-
-    @FXML
-    void btnEventSupplierOnAction(ActionEvent event) {
-        loadUI("/view/AddItemsToEventForm(Tran).fxml");
-
-    }
-
-    @FXML
-    void btnHomeOnAction(ActionEvent event) {
-
     }
 
     @FXML
@@ -96,6 +56,7 @@ public class DashBoardController {
 
     @FXML
     void btnPaymentOnAction(ActionEvent event) {
+        loadUI("/view/PaymentForm.fxml");
 
     }
 
@@ -114,8 +75,32 @@ public class DashBoardController {
             AnchorPane root = FXMLLoader.load(getClass().getResource(resource));
             bodyPane.getChildren().setAll(root);
         } catch (IOException e) {
-            new Alert(Alert.AlertType.ERROR,"Throwing a IOException").show();
+            //new Alert(Alert.AlertType.ERROR,"Throwing a IOException").show();
+            e.printStackTrace();
         }
     }
 
+    @FXML
+    void btnBookingServiceOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEventSupplierOnAction(ActionEvent event) {
+
+    }
+
+    public void imgUserOnClick(MouseEvent mouseEvent) {
+        loadUI("/view/UserUpdateForm.fxml");
+
+    }
+
+    public void imgHomeOnClick(MouseEvent mouseEvent) {
+        loadUI("/view/DashBoardIntroPage.fxml");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadUI("/view/DashBoardIntroPage.fxml");
+    }
 }

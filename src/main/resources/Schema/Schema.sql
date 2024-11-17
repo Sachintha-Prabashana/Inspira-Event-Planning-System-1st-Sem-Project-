@@ -18,7 +18,6 @@ CREATE TABLE Event (
                        booking_id VARCHAR(10) NOT NULL,
                        event_type VARCHAR(30) NOT NULL,
                        event_name VARCHAR(60) NOT NULL,
-                       description VARCHAR(60),
                        budget DECIMAL(10,2) NOT NULL,
                        venue VARCHAR(30) NOT NULL,
                        event_date DATE NOT NULL,      -- stores only the date

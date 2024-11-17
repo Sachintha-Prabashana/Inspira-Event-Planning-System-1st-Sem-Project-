@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -10,13 +12,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="770.0" prefWidth="1350.0" style="-fx-background-color: #EAF2F8;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardController">
+<AnchorPane fx:id="dashBoardPane" prefHeight="770.0" prefWidth="1350.0" style="-fx-background-color: #EAF2F8;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardController">
    <children>
       <VBox layoutX="14.0" layoutY="16.0" prefHeight="738.0" prefWidth="249.0" style="-fx-background-color: #2980b9; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="lblHome" alignment="CENTER" prefHeight="61.0" prefWidth="251.0" text="INSPIRA">
+            <Label fx:id="lblHome" alignment="CENTER" prefHeight="95.0" prefWidth="250.0" text="INSPIRA">
                <font>
-                  <Font name="Comic Sans MS Bold" size="24.0" />
+                  <Font name="Calibri Bold" size="36.0" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -35,98 +37,104 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <VBox prefHeight="678.0" prefWidth="198.0">
+            <VBox prefHeight="590.0" prefWidth="250.0">
                <children>
-                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="61.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Home">
+                  <JFXButton buttonType="RAISED" onAction="#btnCustomerOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Customer">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="HOME" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnCustomer" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Customer">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnEmployeeOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Employee">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="USER_CIRCLE" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnEmployee" layoutX="10.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Employee">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnEventOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="USERS" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnEvent" layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnEventOnAction" prefHeight="61.0" prefWidth="254.0" style="-fx-background-color: #2980b9;" text="Event">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnBookingOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnBooking" layoutX="10.0" layoutY="208.0" mnemonicParsing="false" onAction="#btnBookingOnAction" prefHeight="61.0" prefWidth="252.0" style="-fx-background-color: #2980b9;" text="Booking">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnSupplierOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Supplier">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CALENDARCHECK" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnSupplier" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Supplier">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnItemOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Item">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="TRUCK" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnItem" layoutX="10.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #2980b9;" text="Item">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnServiceOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Service">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="TAG" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnEventSupplier" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#btnEventSupplierOnAction" prefHeight="62.0" prefWidth="252.0" style="-fx-background-color: #2980b9;" text="Event Supplier Details">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnPaymentOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Payment">
+                     <VBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnService" layoutX="10.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnServiceOnAction" prefHeight="62.0" prefWidth="253.0" style="-fx-background-color: #2980b9;" text="Service">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnBookingServiceOnAction" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking-Service">
+                     <VBox.margin>
+                        <Insets left="55.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CONCIERGE_BELL" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnBookingService" layoutX="10.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnBookingServiceOnAction" prefHeight="62.0" prefWidth="251.0" style="-fx-background-color: #2980b9;" text="Booking Service Details">
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnEventSupplierOnAction" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event-Supplier">
+                     <VBox.margin>
+                        <Insets left="60.0" top="25.0" />
+                     </VBox.margin>
                      <font>
-                        <Font name="Comic Sans MS" size="18.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CALENDAR" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnPayment" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2980b9;" text="Payment">
-                     <font>
-                        <Font name="Comic Sans MS" size="18.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CREDIT_CARD" selectionFill="#f2ebeb" />
-                     </graphic>
-                  </Button>
+                  </JFXButton>
                </children>
             </VBox>
+            <AnchorPane prefHeight="159.0" prefWidth="250.0">
+               <children>
+                  <ImageView fx:id="imgUser" fitHeight="40.0" fitWidth="43.0" layoutX="14.0" layoutY="73.0" onMouseClicked="#imgUserOnClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/user-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgHome" fitHeight="39.0" fitWidth="43.0" layoutX="197.0" layoutY="71.0" onMouseClicked="#imgHomeOnClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8-home-52.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
       <AnchorPane fx:id="bodyPane" layoutX="272.0" layoutY="17.0" prefHeight="738.0" prefWidth="1066.0" style="-fx-background-radius: 10; -fx-background-color: white;" />

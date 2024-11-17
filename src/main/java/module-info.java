@@ -4,9 +4,10 @@ module edu.ijse.inspira1stsemesterproject {
     requires java.sql;
     requires lombok;
     requires java.desktop;
-    requires de.jensd.fx.glyphs.fontawesome;
     requires com.jfoenix;
-    requires java.mail;
+    //requires java.mail;
+    requires net.sf.jasperreports.core;
+    requires javax.mail.api;
 
 
     opens edu.ijse.inspira1stsemesterproject.controller to javafx.fxml;

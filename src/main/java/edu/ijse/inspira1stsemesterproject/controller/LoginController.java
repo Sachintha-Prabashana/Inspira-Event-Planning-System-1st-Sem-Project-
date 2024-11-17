@@ -110,6 +110,7 @@ public class LoginController implements Initializable {
 
     @FXML
     void lblForgotPasswordOnClick(MouseEvent event) {
+        loadUI("/view/ForgotPasswordForm.fxml");
 
     }
 

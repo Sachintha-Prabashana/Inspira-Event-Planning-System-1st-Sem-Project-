@@ -23,15 +23,22 @@ public class SendMailController {
     @Setter
     private String customerEmail;
 
+    @Setter
+    private String supplierEmail;
+
     @FXML
     void sendUsingGmailOnAction(ActionEvent event) {
         if(customerEmail == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Customer Email Not Set");
+            alert.showAndWait();
             return;
         }
 
-        final String FROM = "sachinthaprabhashana2003@gmail.com";
-
-        // Get the subject and body from the text fields
+        if(supplierEmail == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Supplier Email Not Set");
+            alert.showAndWait();
+            return;
+        }
         String subject = txtSubject.getText();
         String body = txtBody.getText();
 
@@ -40,11 +47,18 @@ public class SendMailController {
             return;
         }
 
-        sendEmailWithGmail(FROM, customerEmail, subject, body);
-
+        if (customerEmail != null) {
+            sendEmailWithGmail(customerEmail, subject, body);
+        } else if (supplierEmail != null) {
+            sendEmailWithGmail(supplierEmail, subject, body);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Unknown email context");
+            alert.showAndWait();
+        }
     }
 
-    private void sendEmailWithGmail(String from, String to, String subject, String body) {
+    void sendEmailWithGmail(String to, String subject, String body) {
+        final String FROM = "sachinthaprabhashana2003@gmail.com";
         String PASSWORD = "gytfvkavorwdbept";
 
         // Create a new Properties object to hold configuration settings for the SMTP (Simple Mail Transfer Protocol) connection
@@ -66,7 +80,7 @@ public class SendMailController {
 
             // Replace with your email and app password
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from,PASSWORD); // Replace with your email and password
+                return new PasswordAuthentication(FROM,PASSWORD); // Replace with your email and password
             }
         });
 
@@ -75,7 +89,7 @@ public class SendMailController {
             Message message = new MimeMessage(session);
 
             // Set the sender's email address using the `from` parameter.
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(FROM));
 
             // Set the recipient(s) of the email. The `to` parameter is parsed to handle multiple recipients, if necessary.
             // `Message.RecipientType.TO` defines that this is the primary recipient (To field).
@@ -103,4 +117,37 @@ public class SendMailController {
 
     }
 
+    public void sendEmail(String recipientEmail, String otp) {
+        final String senderEmail = "sachinthaprabhashana2003@gmail.com"; // Replace with your email
+        final String senderPassword = "gytfvkavorwdbept";     // Replace with your app-specific password
+
+        // Setting up mail server
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(senderEmail, senderPassword);
+            }
+        });
+
+        try {
+            // Compose the message
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(senderEmail));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
+            message.setSubject("Your OTP Code");
+            message.setText("Your OTP is: " + otp);
+
+            // Send the message
+            Transport.send(message);
+            new Alert(Alert.AlertType.INFORMATION, "Email sent successfully!").show();
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
 }

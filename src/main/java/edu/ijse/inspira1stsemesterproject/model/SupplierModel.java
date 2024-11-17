@@ -1,6 +1,5 @@
 package edu.ijse.inspira1stsemesterproject.model;
 
-import edu.ijse.inspira1stsemesterproject.dto.CustomerDto;
 import edu.ijse.inspira1stsemesterproject.dto.SupplierDto;
 import edu.ijse.inspira1stsemesterproject.util.CrudUtil;
 
@@ -62,5 +61,27 @@ public class SupplierModel {
         }
         return null;
 
+    }
+
+    public boolean saveSupplier(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("insert into supplier values(?,?,?)",
+                supplierDto.getSupplierId(),
+                supplierDto.getSupplierName(),
+                supplierDto.getEmail()
+
+        );
+    }
+
+    public boolean updateSupplier(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute(
+                "update supplier set  supplier_name = ?, email = ? where supplier_id = ?",
+                supplierDto.getSupplierName(),
+                supplierDto.getEmail(),
+                supplierDto.getSupplierId()
+        );
+    }
+
+    public boolean deleteSupplier(String supplierId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("delete from supplier where supplier_id=?", supplierId);
     }
 }

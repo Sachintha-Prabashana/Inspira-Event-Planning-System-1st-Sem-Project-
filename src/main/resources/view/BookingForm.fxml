@@ -53,7 +53,7 @@
             <TableColumn fx:id="clmAction" prefWidth="112.79986572265625" text="Action" />
          </columns>
       </TableView>
-      <JFXComboBox fx:id="cmbCustomerId" layoutX="130.0" layoutY="122.0" onAction="#cmbCustomerIdOnAction" prefHeight="26.0" prefWidth="136.0" promptText="Select customer Id" />
+      <JFXComboBox fx:id="cmbCustomerId" layoutX="130.0" layoutY="122.0" onAction="#cmbCustomerIdOnAction" prefHeight="30.0" prefWidth="158.0" promptText="Select customer Id" stylesheets="@../style/Style.css" />
       <Label layoutX="35.0" layoutY="126.0" text="Customer Id">
          <font>
             <Font name="Calibri" size="16.0" />
@@ -74,7 +74,7 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbServiceId" layoutX="130.0" layoutY="173.0" onAction="#cmbServiceIdOnAction" prefHeight="26.0" prefWidth="136.0" promptText="Select service id" />
+      <JFXComboBox fx:id="cmbServiceId" layoutX="127.0" layoutY="173.0" onAction="#cmbServiceIdOnAction" prefHeight="30.0" prefWidth="158.0" promptText="Select service id" stylesheets="@../style/Style.css" />
       <Label layoutX="328.0" layoutY="177.0" text="Service type">
          <font>
             <Font name="Calibri" size="16.0" />

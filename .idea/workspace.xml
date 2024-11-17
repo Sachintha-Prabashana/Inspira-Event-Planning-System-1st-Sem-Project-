@@ -5,49 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/BookingServiceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/EventSupplierDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/ItemDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/AddItemTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/ItemTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/BookingServiceModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventSupplierModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ItemModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ServiceModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Schema/Schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpVerifiedFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/UserUpdateFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/PaymentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/PaymentTM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/UserUpdate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashBoard-intro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashboard-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashboardpage-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/eye-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/gorgot-password-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/home-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icon-back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icons8-home-52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/log-out-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/otp-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/user-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/wedding-couple.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/CustomerReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/OtpVerifiedForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/UserUpdateForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/AppInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingEventFormController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingServiceFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ForgotPasswordPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EmployeeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EmployeeFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventSupplierFormController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ItemFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SendMailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SendMailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/BookingDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/BookingDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/CustomerDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/EventDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/EventDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/ServiceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/ServiceDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/BookingTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/BookingTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/EventTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/EventTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/ServiceTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/ServiceTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/BookingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/BookingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/CustomerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EmployeeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EmployeeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SupplierFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/SupplierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/SupplierDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ServiceModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/SupplierModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/SupplierModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Schema/Schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Schema/Schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/style/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingEventForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ForgotPasswordForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingServiceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OtpForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EventSupplierForm.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SendMailView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SendMailView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,18 +116,19 @@
   &quot;keyToString&quot;: {
     &quot;Application.AppInitializer.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Final project/StitchWave-1st-Semester-Final-Project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Coursework-oop/Inspira-1st-Semester-Project/src/main/resources/image&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -129,6 +143,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Coursework-oop\Inspira-1st-Semester-Project\src\main\resources\image" />
+      <recent name="D:\Projects\Coursework-oop\Inspira-1st-Semester-Project\src\main\resources\reports" />
     </key>
   </component>
   <component name="RunManager">
@@ -154,8 +169,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -225,7 +240,41 @@
       <workItem from="1731547642270" duration="5475000" />
       <workItem from="1731553195188" duration="256000" />
       <workItem from="1731553463143" duration="2160000" />
-      <workItem from="1731557271916" duration="439000" />
+      <workItem from="1731557271916" duration="679000" />
+      <workItem from="1731563152006" duration="895000" />
+      <workItem from="1731565427683" duration="5217000" />
+      <workItem from="1731578398605" duration="3235000" />
+      <workItem from="1731589550960" duration="1043000" />
+      <workItem from="1731590809945" duration="35000" />
+      <workItem from="1731591128292" duration="287000" />
+      <workItem from="1731591429150" duration="2602000" />
+      <workItem from="1731597016349" duration="7225000" />
+      <workItem from="1731604708301" duration="66000" />
+      <workItem from="1731635520283" duration="1883000" />
+      <workItem from="1731643012123" duration="455000" />
+      <workItem from="1731664731944" duration="8418000" />
+      <workItem from="1731683573101" duration="915000" />
+      <workItem from="1731684515854" duration="971000" />
+      <workItem from="1731726630638" duration="711000" />
+      <workItem from="1731727433330" duration="15451000" />
+      <workItem from="1731762346607" duration="223000" />
+      <workItem from="1731762630708" duration="727000" />
+      <workItem from="1731763468317" duration="550000" />
+      <workItem from="1731764046183" duration="1432000" />
+      <workItem from="1731765524793" duration="1992000" />
+      <workItem from="1731768286294" duration="1837000" />
+      <workItem from="1731799900193" duration="2990000" />
+      <workItem from="1731814111677" duration="5521000" />
+      <workItem from="1731826211708" duration="6197000" />
+      <workItem from="1731833268708" duration="18000" />
+      <workItem from="1731833851837" duration="530000" />
+      <workItem from="1731835317504" duration="497000" />
+      <workItem from="1731847966781" duration="7704000" />
+      <workItem from="1731857223663" duration="870000" />
+      <workItem from="1731858153108" duration="2198000" />
+      <workItem from="1731860463345" duration="2604000" />
+      <workItem from="1731863175224" duration="661000" />
+      <workItem from="1731863924359" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -275,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731223092772</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1731557932307</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731557932307</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,5 +352,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -2,8 +2,7 @@ package edu.ijse.inspira1stsemesterproject.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString

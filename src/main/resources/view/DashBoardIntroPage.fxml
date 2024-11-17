@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="737.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardIntroController">
+<AnchorPane fx:id="homePane" prefHeight="737.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.DashBoardIntroController">
    <children>
-      <TextField layoutX="722.0" layoutY="8.0" prefHeight="26.0" prefWidth="189.0" style="-fx-background-radius: 13;" />
-      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="727.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgLogOut" fitHeight="42.0" fitWidth="46.0" layoutX="983.0" layoutY="665.0" onMouseClicked="#imgLogOutOnClick" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/icon-search.png" />
+            <Image url="@../image/log-out-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="747.0" fitWidth="750.0" layoutX="159.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dashboard-img.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="361.0" fitWidth="358.0" layoutX="366.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dashBoard-intro.png" />
          </image>
       </ImageView>
    </children>
