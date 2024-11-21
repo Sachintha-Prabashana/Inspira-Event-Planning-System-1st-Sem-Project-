@@ -36,12 +36,15 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </Label>
             <VBox prefHeight="590.0" prefWidth="250.0">
                <children>
                   <JFXButton buttonType="RAISED" onAction="#btnCustomerOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Customer">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="35.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -49,7 +52,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnEmployeeOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Employee">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -57,7 +60,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnEventOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -65,7 +68,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnBookingOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -73,7 +76,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnSupplierOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Supplier">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -81,7 +84,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnItemOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Item">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -89,7 +92,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnServiceOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Service">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -97,23 +100,7 @@
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnPaymentOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Payment">
                      <VBox.margin>
-                        <Insets left="65.0" top="25.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Calibri Bold" size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#btnBookingServiceOnAction" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking-Service">
-                     <VBox.margin>
-                        <Insets left="55.0" top="25.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Calibri Bold" size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#btnEventSupplierOnAction" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event-Supplier">
-                     <VBox.margin>
-                        <Insets left="60.0" top="25.0" />
+                        <Insets left="65.0" top="30.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
@@ -123,12 +110,12 @@
             </VBox>
             <AnchorPane prefHeight="159.0" prefWidth="250.0">
                <children>
-                  <ImageView fx:id="imgUser" fitHeight="40.0" fitWidth="43.0" layoutX="14.0" layoutY="73.0" onMouseClicked="#imgUserOnClick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgUser" fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="73.0" onMouseClicked="#imgUserOnClick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/user-icon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgHome" fitHeight="39.0" fitWidth="43.0" layoutX="197.0" layoutY="71.0" onMouseClicked="#imgHomeOnClick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgHome" fitHeight="35.0" fitWidth="35.0" layoutX="197.0" layoutY="71.0" onMouseClicked="#imgHomeOnClick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/icons8-home-52.png" />
                      </image>

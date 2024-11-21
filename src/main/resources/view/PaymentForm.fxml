@@ -39,7 +39,7 @@
          <font>
             <Font name="Calibri" size="16.0" />
          </font></TextField>
-      <JFXComboBox fx:id="cmbBookingId" layoutX="139.0" layoutY="154.0" prefHeight="26.0" prefWidth="190.0" promptText="Select Booking Id" />
+      <JFXComboBox fx:id="cmbBookingId" layoutX="139.0" layoutY="154.0" prefHeight="26.0" prefWidth="190.0" promptText="Select Booking Id" stylesheets="@../style/Style.css" />
       <Label layoutX="34.0" layoutY="158.0" text="Booking Id">
          <font>
             <Font name="Calibri" size="16.0" />

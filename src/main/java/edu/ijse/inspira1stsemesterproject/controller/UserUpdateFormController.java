@@ -1,6 +1,7 @@
 package edu.ijse.inspira1stsemesterproject.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import edu.ijse.inspira1stsemesterproject.dto.CustomerDto;
 import edu.ijse.inspira1stsemesterproject.dto.UserDto;
 import edu.ijse.inspira1stsemesterproject.model.UserModel;
 import javafx.collections.FXCollections;
@@ -13,7 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -102,45 +106,63 @@ public class UserUpdateFormController implements Initializable {
 
     @FXML
     void savebtnOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        String userId = String.valueOf(cmbUserId.getValue());
+        UserDto userDto = getFieldValues();
+
+        if(userDto != null) {
+            try{
+                boolean isUpdate = userModel.updateUser(userDto);
+
+                if (isUpdate) {
+                    new Alert(Alert.AlertType.INFORMATION, "User updated...!").show();
+                    refreshPage();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Fail to update user...!").show();
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private UserDto getFieldValues() {
+        String userId = cmbUserId.getSelectionModel().getSelectedItem();
         String firstName = txtFirstName.getText();
         String lastName = txtLastName.getText();
         String username = txtUsername.getText();
         String email = txtEmail.getText();
         String password = txtPassoword.getText();
 
+        boolean isValidateFields = validateUserFields(firstName, lastName, username, email);
+
+        if(isValidateFields) {
+            return new UserDto(userId,firstName,lastName,username,email,password);
+        }
+        return null;
+
+    }
+
+    private boolean validateUserFields(String firstName, String lastName, String username, String email) {
         String fnamePattern = "^[A-Za-z ]+$";
         String lnamePattern = "^[A-Za-z ]+$";
         String unamePattern = "^[a-zA-Z0-9_]{5,15}$";
         String emailPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@gmail\\.com$";
-        String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
 
-        boolean isValidFname = firstName.matches(fnamePattern);
-        boolean isValidLname = lastName.matches(lnamePattern);
-        boolean isValidUname = username.matches(unamePattern);
+        boolean isValidName = firstName.matches(fnamePattern) && lastName.matches(lnamePattern);
+        boolean isValidUsername = username.matches(unamePattern);
         boolean isValidEmail = email.matches(emailPattern);
-        boolean isValidPassword = password.matches(passwordPattern);
 
-        txtFirstName.setStyle(txtFirstName.getStyle() + ";-fx-border-color:  #091057;");
-        txtLastName.setStyle(txtLastName.getStyle() + ";-fx-border-color:  #091057;");
-        txtUsername.setStyle(txtUsername.getStyle() + ";-fx-border-color:  #091057;");
-        txtEmail.setStyle(txtEmail.getStyle() + ";-fx-border-color:  #091057;");
-        txtPassoword.setStyle(txtPassoword.getStyle() + ";-fx-border-color:  #091057;");
-
-        if (isValidFname && isValidLname && isValidUname && isValidEmail && isValidPassword){
-            UserDto dto = new UserDto(userId, firstName, lastName, username, email, password);
-
-            boolean isSaved = userModel.updateUser(dto);
-
-            if (isSaved) {
-                new Alert(Alert.AlertType.INFORMATION, "User Information saved...!").show();
-                refreshPage();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Fail to save user information...!").show();
-
-            }
+        if (!isValidName) {
+            txtFirstName.setStyle(txtFirstName.getStyle() + ";-fx-border-color: red;");
+            txtLastName.setStyle(txtLastName.getStyle() + ";-fx-border-color: red;");
+        }
+        if (!isValidUsername) {
+            txtUsername.setStyle(txtUsername.getStyle() + ";-fx-border-color: red;");
+        }
+        if (!isValidEmail) {
+            txtEmail.setStyle(txtEmail.getStyle() + ";-fx-border-color: red;");
         }
 
+        return isValidName && isValidUsername && isValidEmail;
     }
 
 }

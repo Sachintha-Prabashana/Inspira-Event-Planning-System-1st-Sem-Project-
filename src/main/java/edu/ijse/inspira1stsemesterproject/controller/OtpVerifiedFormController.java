@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
@@ -39,17 +40,18 @@ public class OtpVerifiedFormController implements Initializable {
     @FXML
     private Label lblLogin;
 
-    @FXML
-    private PasswordField txtConfirmPassword;
 
     @FXML
-    private TextField txtConfirmPasswordVisible;
+    private PasswordField pwfConfirmPassword;
 
     @FXML
-    private PasswordField txtPassword;
+    private TextField txtConfirmPassword;
 
     @FXML
-    private TextField txtPasswordVisible;
+    private PasswordField pwfPassword;
+
+    @FXML
+    private TextField txtPassword;
 
     @FXML
     private AnchorPane rootPane;
@@ -60,10 +62,6 @@ public class OtpVerifiedFormController implements Initializable {
     //private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
 
     private UserModel userModel = new UserModel();
-
-    private boolean isPasswordVisible = false;
-
-    private boolean isConfirmPasswordVisible = false;
 
 
 
@@ -77,7 +75,7 @@ public class OtpVerifiedFormController implements Initializable {
     void btnResetOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (areFieldsEmpty()) {
             showErrorMessage("*Required fields cannot be empty.");
-        } else if (!txtPassword.getText().equals(txtPassword.getText())) {
+        } else if (!(txtPassword.getText().equals(txtPassword.getText()))) {
             showErrorMessage("*Passwords do not match.");
         } else {
             if (updateUser()) {
@@ -99,7 +97,7 @@ public class OtpVerifiedFormController implements Initializable {
         ArrayList<UserDto> allUsers = userModel.getAllUsers();
         for (UserDto user : allUsers) {
             if (user.getEmail().equals(ForgotPasswordPageController.emailAddress)) {
-                user.setPassword(txtPasswordVisible.getText());
+                user.setPassword(pwfPassword.getText());
                 userModel.updateUser(user);
                 return true;
             }
@@ -114,31 +112,29 @@ public class OtpVerifiedFormController implements Initializable {
 
     @FXML
     void imgConfirmPasswordViewOnClick(MouseEvent event) {
-        if (isConfirmPasswordVisible) {
-            txtConfirmPassword.setText(txtConfirmPasswordVisible.getText());
-            txtConfirmPasswordVisible.setVisible(false);
+        if (pwfConfirmPassword.isVisible()) {
+            txtConfirmPassword.setText(pwfConfirmPassword.getText());
+            pwfConfirmPassword.setVisible(false);
             txtConfirmPassword.setVisible(true);
         } else {
-            txtConfirmPasswordVisible.setText(txtConfirmPassword.getText());
-            txtConfirmPasswordVisible.setVisible(true);
+            pwfConfirmPassword.setText(txtConfirmPassword.getText());
             txtConfirmPassword.setVisible(false);
+            pwfConfirmPassword.setVisible(true);
         }
-        isConfirmPasswordVisible = !isConfirmPasswordVisible;
 
     }
 
     @FXML
     void imgPasswordViewOnClick(MouseEvent event) {
-        if (isPasswordVisible) {
-            txtPassword.setText(txtPasswordVisible.getText());
-            txtPasswordVisible.setVisible(false);
+        if (pwfPassword.isVisible()) {
+            txtPassword.setText(pwfPassword.getText());
+            pwfPassword.setVisible(false);
             txtPassword.setVisible(true);
         } else {
-            txtPasswordVisible.setText(txtPassword.getText());
-            txtPasswordVisible.setVisible(true);
+            pwfPassword.setText(txtPassword.getText());
             txtPassword.setVisible(false);
+            pwfPassword.setVisible(true);
         }
-        isPasswordVisible = !isPasswordVisible;
 
     }
 

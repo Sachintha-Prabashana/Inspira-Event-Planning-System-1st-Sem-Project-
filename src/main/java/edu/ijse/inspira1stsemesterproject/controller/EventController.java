@@ -1,8 +1,8 @@
 package edu.ijse.inspira1stsemesterproject.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import edu.ijse.inspira1stsemesterproject.db.DBConnection;
 import edu.ijse.inspira1stsemesterproject.dto.*;
-import edu.ijse.inspira1stsemesterproject.dto.tm.BookingTM;
 import edu.ijse.inspira1stsemesterproject.dto.tm.EventTM;
 import edu.ijse.inspira1stsemesterproject.model.*;
 import javafx.collections.FXCollections;
@@ -12,14 +12,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class EventController implements Initializable {
 
@@ -105,13 +105,15 @@ public class EventController implements Initializable {
     private TextField txtQtyToAdd;
 
     @FXML
+    private DatePicker eventDatePicker;
+
+    @FXML
     private TextField txtVenue;
 
     private static final String VENUE_PATTERN = "^[A-Za-z0-9 ,.-]+$";
     private static final String QTY_PATTERN = "^[1-9][0-9]*$";
     private static final String NAME_PATTERN = "^[A-Za-z ]+$";
     private static final String PRICE_PATTERN = "^[0-9]+(\\.[0-9]{1,2})?$";
-
 
 
     private final EventModel eventModel = new EventModel();
@@ -127,9 +129,9 @@ public class EventController implements Initializable {
         cmbEventType.getItems().addAll("Wedding", "Conference", "Birthday Party", "Corporate Event", "Workshop", "Concert", "Exhibition", "Seminar", "Fundraiser", "Festival", "Gala", "Product Launch", "Retreat", "Trade Show", "Networking Event", "Training Session");
 
 
-        try{
+        try {
             refreshPage();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -154,25 +156,13 @@ public class EventController implements Initializable {
 
     }
 
-    private void refreshPage() throws Exception{
-        // Get the next order ID and set it to the label
+    private void refreshPage() throws Exception {
+
         lblEventId.setText(eventModel.getNextEventId());
 
-        // Set the current date to the order date label
-//        orderDate.setText(String.valueOf(LocalDate.now()));
-
-        // Load customer and item IDs into ComboBoxes
         loadBookingIds();
         loadSupplierIds();
-        loadItemIds();
 
-//        ComboBox on action set
-//        cmbCustomerId.setOnAction(e->{
-//            String selectedCusId = cmbCustomerId.getSelectionModel().getSelectedItem();
-//            System.out.println(selectedCusId);
-//        });
-
-        // Clear selected customer, item, and their associated labels
         cmbEventType.getSelectionModel().clearSelection();
         cmbBookingId.getSelectionModel().clearSelection();
         cmbItemId.getSelectionModel().clearSelection();
@@ -182,7 +172,7 @@ public class EventController implements Initializable {
         lblSupplierName.setText("");
         lblQty.setText("");
         txtVenue.setText("");
-        txtDate.setText("");
+        eventDatePicker.setValue(null);
         txtBudget.setText("");
         txtEventName.setText("");
         txtQtyToAdd.setText("");
@@ -196,52 +186,54 @@ public class EventController implements Initializable {
     }
 
 
-
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         String selectedBookingId = cmbBookingId.getValue();
 
-        // If no item is selected, show an error alert and return
         if (selectedBookingId == null) {
             new Alert(Alert.AlertType.ERROR, "Please select booking..!").show();
-            return; // Exit the method if no item is selected.
+            return;
+        }
+
+        String selectedEventType = cmbEventType.getValue();
+
+        if (selectedEventType == null) {
+            new Alert(Alert.AlertType.ERROR, "Please select event type..!").show();
         }
 
         String selectedSupplierId = cmbSupplierId.getValue();
 
-        // If no item is selected, show an error alert and return
         if (selectedSupplierId == null) {
             new Alert(Alert.AlertType.ERROR, "Please select supplier..!").show();
-            return; // Exit the method if no item is selected.
+            return;
         }
 
         String selectedItemId = cmbItemId.getValue();
 
-        // If no item is selected, show an error alert and return
         if (selectedItemId == null) {
             new Alert(Alert.AlertType.ERROR, "Please select item..!").show();
-            return; // Exit the method if no item is selected.
+            return;
         }
 
         boolean isValidName = txtEventName.getText().matches(NAME_PATTERN);
 
-        if (!isValidName){
+        if (!isValidName) {
             txtEventName.setStyle(txtEventName.getStyle() + ";-fx-border-color: red;");
         }
 
         boolean isValidQty = txtQtyToAdd.getText().matches(QTY_PATTERN);
-        if (!isValidQty){
+        if (!isValidQty) {
             txtQtyToAdd.setStyle(txtQtyToAdd.getStyle() + ";-fx-border-color: red;");
         }
 
         boolean isValidVenue = txtVenue.getText().matches(VENUE_PATTERN);
-        if (!isValidVenue){
+        if (!isValidVenue) {
             txtVenue.setStyle(txtVenue.getStyle() + ";-fx-border-color: red;");
         }
 
         boolean isValidBudget = txtBudget.getText().matches(PRICE_PATTERN);
 
-        if (!isValidBudget){
+        if (!isValidBudget) {
             txtBudget.setStyle(txtBudget.getStyle() + ";-fx-border-color: red;");
         }
 
@@ -251,13 +243,17 @@ public class EventController implements Initializable {
         Double budget = Double.valueOf((txtBudget.getText()));
         String eventName = txtEventName.getText();
         String venue = txtVenue.getText();
-        java.sql.Date date = java.sql.Date.valueOf(txtDate.getText());
+        java.sql.Date date = java.sql.Date.valueOf(eventDatePicker.getValue());
         String itemName = lblItemName.getText();
         Double price = Double.valueOf(lblPrice.getText());
 
         if (quantity < qty) {
             new Alert(Alert.AlertType.ERROR, "Not enough items..!").show();
             return; // Exit the method if there's insufficient stock.
+        }
+        
+        if(quantity <= 0){
+            new Alert(Alert.AlertType.ERROR, "Add items to database..!").show();
         }
 
         // Clear the text field for adding quantity after retrieving the input value.
@@ -317,13 +313,6 @@ public class EventController implements Initializable {
 
     }
 
-    private void loadItemIds() throws SQLException, ClassNotFoundException {
-        ArrayList<String> itemIds = itemModel.getAllItemIds();
-
-        ObservableList<String> observableList = FXCollections.observableArrayList();
-        observableList.addAll(itemIds);
-        cmbItemId.setItems(observableList);
-    }
 
     private void loadSupplierIds() throws SQLException, ClassNotFoundException {
         ArrayList<String> supplierIds = supplierModel.getAllSupplierIds();
@@ -340,15 +329,14 @@ public class EventController implements Initializable {
         observableList.addAll(bookingIds);
         cmbBookingId.setItems(observableList);
     }
+
     @FXML
     void cmbItemIdOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         String selectedItemId = cmbItemId.getSelectionModel().getSelectedItem();
         ItemDto itemDto = itemModel.findById(selectedItemId);
 
-        // If customer found (customerDTO not null)
         if (itemDto != null) {
 
-            // FIll customer related labels
             lblItemName.setText(itemDto.getItemName());
             lblPrice.setText(String.valueOf(itemDto.getItemPrice()));
             lblQty.setText(String.valueOf(itemDto.getItemQuantity()));
@@ -361,60 +349,53 @@ public class EventController implements Initializable {
         String selectedSupplierId = cmbSupplierId.getSelectionModel().getSelectedItem();
         SupplierDto supplierDto = supplierModel.findById(selectedSupplierId);
 
-        // If customer found (customerDTO not null)
         if (supplierDto != null) {
 
-            // FIll customer related labels
             lblSupplierName.setText(supplierDto.getSupplierName());
-
+            loadItemIDs(selectedSupplierId);
         }
     }
 
-    @FXML
-    void tblEventOnClick(MouseEvent event) {
+    private void loadItemIDs(String supplierId) throws SQLException, ClassNotFoundException {
+        ArrayList<String> itemIds = itemModel.getAllItemIds(supplierId);
 
+        ObservableList<String> observableList = FXCollections.observableArrayList();
+        observableList.addAll(itemIds);
+        cmbItemId.setItems(observableList);
     }
-
 
     public void blnCompleteSetupOnAction(ActionEvent event) throws Exception {
         if (tblEvent.getItems().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Please add items to table..!").show();
+            new Alert(Alert.AlertType.ERROR, "Please add items to the table..!").show();
             return;
         }
         if (cmbBookingId.getSelectionModel().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Please select booking for place event..!").show();
+            new Alert(Alert.AlertType.ERROR, "Please select a booking to place the event..!").show();
             return;
         }
 
         String eventId = lblEventId.getText();
-        String supplierId = cmbSupplierId.getValue();
         String eventType = cmbEventType.getValue();
-        int quantity = Integer.parseInt(lblQty.getText());
-        //int qty = Integer.parseInt(txtQtyToAdd.getText());
-        Double budget = Double.valueOf((txtBudget.getText()));
+        Double budget = Double.valueOf(txtBudget.getText());
         String eventName = txtEventName.getText();
         String venue = txtVenue.getText();
-        java.sql.Date date = java.sql.Date.valueOf(txtDate.getText());
-        String itemName = lblItemName.getText();
-        Double price = Double.valueOf(lblPrice.getText());
+        java.sql.Date date = java.sql.Date.valueOf(eventDatePicker.getValue());
 
-        //double totalPrice = price * quantity;
-        // List to hold order details
         ArrayList<EventSupplierDto> eventSupplierDtos = new ArrayList<>();
 
-        // Collect data for each item in the cart and add to order details array
         for (EventTM eventTM : eventTMS) {
+            if (eventTM.getSupplierId() == null || eventTM.getItemId() == null || eventTM.getQuantity() <= 0) {
+                new Alert(Alert.AlertType.ERROR, "Invalid data in the event table. Please check the inputs.").show();
+                return;
+            }
 
-            // Create order details for each cart item
             EventSupplierDto eventSupplierDto = new EventSupplierDto(
                     eventId,
-                    supplierId,
+                    eventTM.getSupplierId(),
                     eventTM.getItemId(),
                     eventTM.getQuantity(),
                     eventTM.getTotalPrice()
             );
-
-            // Add to order details array
             eventSupplierDtos.add(eventSupplierDto);
         }
 
@@ -426,20 +407,57 @@ public class EventController implements Initializable {
                 budget,
                 venue,
                 date,
-
                 eventSupplierDtos
         );
 
         boolean isSaved = eventModel.saveEvent(eventDto);
 
         if (isSaved) {
-            new Alert(Alert.AlertType.INFORMATION, "Event saved..!").show();
-
-            // Reset the page after placing the order
+            new Alert(Alert.AlertType.INFORMATION, "Event saved successfully..!").show();
+            RemoveUsedBookingIds(cmbBookingId.getValue());
             refreshPage();
+
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to save event..!").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to save event. Please check item details.").show();
         }
+    }
+
+    private void RemoveUsedBookingIds(String bookingId) {
+        // Check if the bookingId exists in the ComboBox
+        if (cmbBookingId.getItems().contains(bookingId)) {
+            // Remove the bookingId from the ComboBox
+            cmbBookingId.getItems().remove(bookingId);
+            System.out.println("Booking ID " + bookingId + " removed successfully.");
+        } else {
+            System.out.println("Booking ID " + bookingId + " not found in the ComboBox.");
+        }
+    }
+
+
+    @FXML
+    void btnGenerateReportOnAction(ActionEvent event) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            Map<String, Object> parameters = new HashMap<>();
+
+            parameters.put("today", LocalDate.now().toString());
+            parameters.put("TODAY", LocalDate.now().toString());
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/reports/EventSupplier.jrxml"));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    parameters,
+                    connection
+            );
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException | ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void eventDatePickerOnAction(ActionEvent actionEvent) {
 
     }
 }

@@ -12,7 +12,6 @@
 
 <AnchorPane fx:id="rootPane" prefHeight="770.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.inspira1stsemesterproject.controller.OtpVerifiedFormController">
    <children>
-      <PasswordField fx:id="txtPassword" layoutX="141.0" layoutY="358.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css" />
       <ImageView fitHeight="770.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/img.png" />
@@ -48,16 +47,6 @@
             <Image url="@../image/icon-inspira.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgPasswordView" fitHeight="30.0" fitWidth="30.0" layoutX="545.0" layoutY="366.0" onMouseClicked="#imgPasswordViewOnClick" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/eye-icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgConfirmPasswordView" fitHeight="30.0" fitWidth="30.0" layoutX="545.0" layoutY="480.0" onMouseClicked="#imgConfirmPasswordViewOnClick" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/eye-icon.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="482.0" fitWidth="501.0" layoutX="725.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/second-register-page.png" />
@@ -69,20 +58,37 @@
          </image>
       </ImageView>
       <Label fx:id="lblError" layoutX="140.0" layoutY="544.0" prefHeight="18.0" prefWidth="443.0" />
-      <TextField fx:id="txtConfirmPasswordVisible" layoutX="140.0" layoutY="472.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
+      <TextField fx:id="txtConfirmPassword" layoutX="140.0" layoutY="473.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <PasswordField fx:id="txtConfirmPassword" layoutX="141.0" layoutY="472.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
+      <PasswordField fx:id="pwfConfirmPassword" layoutX="141.0" layoutY="473.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </PasswordField>
-      <TextField fx:id="txtPasswordVisible" layoutX="140.0" layoutY="358.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
+      <TextField fx:id="txtPassword" layoutX="140.0" layoutY="358.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
+      <ImageView fx:id="imgConfirmPasswordView" fitHeight="30.0" fitWidth="30.0" layoutX="545.0" layoutY="481.0" onMouseClicked="#imgConfirmPasswordViewOnClick" opacity="0.32" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/eye-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <PasswordField fx:id="pwfPassword" layoutX="141.0" layoutY="358.0" prefHeight="46.0" prefWidth="444.0" stylesheets="@../style/Style.css" />
+      <ImageView fx:id="imgPasswordView" fitHeight="30.0" fitWidth="30.0" layoutX="545.0" layoutY="366.0" onMouseClicked="#imgPasswordViewOnClick" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/eye-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

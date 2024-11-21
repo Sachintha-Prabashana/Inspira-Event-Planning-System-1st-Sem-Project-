@@ -23,17 +23,16 @@ public class EventModel {
         }
         return "E001";
     }
-    
+
 
     public boolean saveEvent(EventDto eventDto) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getInstance().getConnection();
-        try {
-            // @autoCommit: Disables auto-commit to manually control the transaction
-            connection.setAutoCommit(false); // 1
 
-            // @isOrderSaved: Saves the order details into the orders table
-            boolean isOrderSaved = CrudUtil.execute(
-                    "insert into event values (?,?,?,?,?,?,?)",
+        try {
+            connection.setAutoCommit(false);
+
+            boolean isEventSaved = CrudUtil.execute(
+                    "INSERT INTO event (event_id, booking_id, event_type, event_name, budget, venue, event_date) VALUES (?,?,?,?,?,?,?)",
                     eventDto.getEventId(),
                     eventDto.getBookingId(),
                     eventDto.getEventType(),
@@ -42,26 +41,27 @@ public class EventModel {
                     eventDto.getVenue(),
                     eventDto.getDate()
             );
-            // If the order is saved successfully
-            if (isOrderSaved) {
-                // @isOrderDetailListSaved: Saves the list of order details
-                boolean isOrderDetailListSaved = eventSupplierModel.saveEventSuppliersList(eventDto.getEventSupplierDtos());
-                if (isOrderDetailListSaved) {
-                    // @commit: Commits the transaction if both order and details are saved successfully
-                    connection.commit(); // 2
-                    return true;
-                }
+
+            if (!isEventSaved) {
+                connection.rollback();
+                return false;
             }
-            // @rollback: Rolls back the transaction if order details saving fails
-            connection.rollback(); // 3
-            return false;
+
+            boolean isEventSupplierListSaved = eventSupplierModel.saveEventSuppliersList(eventDto.getEventSupplierDtos());
+            if (!isEventSupplierListSaved) {
+                connection.rollback();
+                return false;
+            }
+
+            connection.commit();
+            return true;
+
         } catch (Exception e) {
-            // @catch: Rolls back the transaction in case of any exception
+            e.printStackTrace();
             connection.rollback();
             return false;
         } finally {
-            // @finally: Resets auto-commit to true after the operation
-            connection.setAutoCommit(true); // 4
+            connection.setAutoCommit(true);
         }
     }
 

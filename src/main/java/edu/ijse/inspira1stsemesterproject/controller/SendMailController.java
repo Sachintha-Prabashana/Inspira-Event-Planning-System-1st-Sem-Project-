@@ -112,42 +112,4 @@ public class SendMailController {
         }
     }
 
-    @FXML
-    void sendUsingSendgridOnAction(ActionEvent event) {
-
-    }
-
-    public void sendEmail(String recipientEmail, String otp) {
-        final String senderEmail = "sachinthaprabhashana2003@gmail.com"; // Replace with your email
-        final String senderPassword = "gytfvkavorwdbept";     // Replace with your app-specific password
-
-        // Setting up mail server
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(senderEmail, senderPassword);
-            }
-        });
-
-        try {
-            // Compose the message
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(senderEmail));
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
-            message.setSubject("Your OTP Code");
-            message.setText("Your OTP is: " + otp);
-
-            // Send the message
-            Transport.send(message);
-            new Alert(Alert.AlertType.INFORMATION, "Email sent successfully!").show();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
 }

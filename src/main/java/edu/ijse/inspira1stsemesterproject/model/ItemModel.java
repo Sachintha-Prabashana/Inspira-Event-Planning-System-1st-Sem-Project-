@@ -1,9 +1,7 @@
 package edu.ijse.inspira1stsemesterproject.model;
 
-import edu.ijse.inspira1stsemesterproject.dto.EventDto;
 import edu.ijse.inspira1stsemesterproject.dto.EventSupplierDto;
 import edu.ijse.inspira1stsemesterproject.dto.ItemDto;
-import edu.ijse.inspira1stsemesterproject.dto.SupplierDto;
 import edu.ijse.inspira1stsemesterproject.util.CrudUtil;
 
 import java.sql.ResultSet;
@@ -44,15 +42,16 @@ public class ItemModel {
         return itemDtos;
     }
 
-    public ArrayList<String> getAllItemIds() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.execute("select item_id from item");
+    public ArrayList<String> getAllItemIds(String supplierId) throws SQLException, ClassNotFoundException {
+        String query = "SELECT item_id FROM item WHERE supplier_id = ?";
+
+        ResultSet rst = CrudUtil.execute(query, supplierId);
 
         ArrayList<String> itemIds = new ArrayList<>();
 
         while (rst.next()) {
             itemIds.add(rst.getString(1));
         }
-
         return itemIds;
     }
 
@@ -73,20 +72,33 @@ public class ItemModel {
     }
 
     public boolean reduceQty(EventSupplierDto eventSupplierDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(
-                "update item set quantity = quantity - ? where item_id = ?",
-                eventSupplierDto.getItemQuantity(),  // Quantity to reduce
-                eventSupplierDto.getItemId()        // Item ID to identify the item
+        if (eventSupplierDto.getItemQuantity() <= 0) {
+            System.err.println("Invalid quantity to reduce: " + eventSupplierDto.getItemQuantity());
+            return false;
+        }
 
+        // Ensure that the item ID is not null or empty
+        if (eventSupplierDto.getItemId() == null || eventSupplierDto.getItemId().isEmpty()) {
+            System.err.println("Invalid item ID: " + eventSupplierDto.getItemId());
+            return false;
+        }
+
+        // Update the item quantity in the database
+        return CrudUtil.execute(
+                "UPDATE item SET quantity = quantity - ? WHERE item_id = ? AND quantity >= ?",
+                eventSupplierDto.getItemQuantity(),  // Quantity to reduce
+                eventSupplierDto.getItemId(),       // Item ID to identify the item
+                eventSupplierDto.getItemQuantity()  // Ensure enough quantity is available
         );
     }
+
 
     public boolean deleteItem(String itemId) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("delete from item where item_id=?", itemId);
     }
 
     public boolean saveItem(ItemDto itemDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("insert into service values(?,?,?,?,?,?)",
+        return CrudUtil.execute("insert into item values(?,?,?,?,?,?)",
                 itemDto.getItemId(),
                 itemDto.getItemName(),
                 itemDto.getItemDescription(),

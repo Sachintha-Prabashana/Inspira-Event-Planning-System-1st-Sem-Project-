@@ -80,16 +80,6 @@ public class DashBoardController implements Initializable {
         }
     }
 
-    @FXML
-    void btnBookingServiceOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnEventSupplierOnAction(ActionEvent event) {
-
-    }
-
     public void imgUserOnClick(MouseEvent mouseEvent) {
         loadUI("/view/UserUpdateForm.fxml");
 

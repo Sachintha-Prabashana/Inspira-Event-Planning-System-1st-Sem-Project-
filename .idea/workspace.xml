@@ -5,62 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4943eccd-88ce-4757-bc05-153147763a7c" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpVerifiedFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/UserUpdateFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/PaymentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/tm/PaymentTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/UserUpdate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashBoard-intro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashboard-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashboardpage-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/eye-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/gorgot-password-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/home-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icon-back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icons8-home-52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/log-out-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/otp-page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/user-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/wedding-couple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/CustomerReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/OtpVerifiedForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/UserUpdateForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/dashboard-image-wedding.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/wedding-img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/EventSupplier.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingServiceFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ForgotPasswordPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/BookingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/DashBoardIntroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ItemFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ItemFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ForgotPasswordPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ForgotPasswordPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpVerifiedFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/OtpVerifiedFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SendMailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SendMailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/ServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/SupplierFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/SupplierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/SupplierDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/UserUpdateFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/controller/UserUpdateFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventSupplierModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/EventSupplierModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/PaymentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/ServiceModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/SupplierModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/SupplierModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Schema/Schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Schema/Schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ijse/inspira1stsemesterproject/util/CrudUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/reports/CustomerReport.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/reports/CustomerReport.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/style/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingEventForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ForgotPasswordForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/BookingForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookingServiceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OtpForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoardIntroPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EmployeeForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EventForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ItemForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LogInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LogInPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/OtpVerifiedForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OtpVerifiedForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PaymentForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SendMailView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SendMailView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ServiceForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +69,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -274,7 +244,29 @@
       <workItem from="1731858153108" duration="2198000" />
       <workItem from="1731860463345" duration="2604000" />
       <workItem from="1731863175224" duration="661000" />
-      <workItem from="1731863924359" duration="643000" />
+      <workItem from="1731863924359" duration="991000" />
+      <workItem from="1731888686437" duration="1197000" />
+      <workItem from="1731889907024" duration="181000" />
+      <workItem from="1731900712961" duration="667000" />
+      <workItem from="1731902640586" duration="2582000" />
+      <workItem from="1731911052056" duration="206000" />
+      <workItem from="1731939009050" duration="1552000" />
+      <workItem from="1731992440765" duration="2583000" />
+      <workItem from="1731996745558" duration="2346000" />
+      <workItem from="1732006678052" duration="622000" />
+      <workItem from="1732008474909" duration="938000" />
+      <workItem from="1732012121415" duration="1918000" />
+      <workItem from="1732017301023" duration="1265000" />
+      <workItem from="1732020942615" duration="1154000" />
+      <workItem from="1732024308746" duration="1060000" />
+      <workItem from="1732030381255" duration="1792000" />
+      <workItem from="1732069083455" duration="2592000" />
+      <workItem from="1732075785710" duration="20000" />
+      <workItem from="1732075869631" duration="1614000" />
+      <workItem from="1732077612159" duration="2740000" />
+      <workItem from="1732084773362" duration="1737000" />
+      <workItem from="1732110801941" duration="2070000" />
+      <workItem from="1732149646180" duration="572000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -332,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731557932307</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1731864897360</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731864897360</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

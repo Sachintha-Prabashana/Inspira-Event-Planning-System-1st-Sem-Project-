@@ -11,14 +11,9 @@
             <Image url="@../image/log-out-icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="747.0" fitWidth="750.0" layoutX="159.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="737.0" fitWidth="850.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/dashboard-img.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="361.0" fitWidth="358.0" layoutX="366.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/dashBoard-intro.png" />
+            <Image url="@../image/wedding-img.jpg" />
          </image>
       </ImageView>
    </children>

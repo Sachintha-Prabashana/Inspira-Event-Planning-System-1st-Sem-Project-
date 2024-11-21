@@ -67,9 +67,6 @@ public class BookingController implements Initializable {
     private Label lblServiceType;
 
     @FXML
-    private Label lblStatusData;
-
-    @FXML
     private TableView<BookingTM> tblBooking;
 
     @FXML
@@ -259,7 +256,7 @@ public class BookingController implements Initializable {
             // Create order details for each cart item
             BookingServiceDto bookingServiceDto = new BookingServiceDto(
                     bookingId,
-                    serviceId,
+                    bookingTM.getServiceId(),
                     dateOfBooking
             );
 

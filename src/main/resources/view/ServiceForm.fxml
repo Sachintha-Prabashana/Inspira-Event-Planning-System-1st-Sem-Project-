@@ -31,10 +31,10 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbServiceType" layoutX="148.0" layoutY="66.0" promptText="Choose your service type" />
-      <TextField fx:id="txtPrice" layoutX="148.0" layoutY="113.0" prefHeight="26.0" prefWidth="175.0" promptText="Enter the price here" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <JFXComboBox fx:id="cmbServiceType" layoutX="148.0" layoutY="66.0" prefHeight="30.0" prefWidth="203.0" promptText="Choose your service type" stylesheets="@../style/Style.css" />
+      <TextField fx:id="txtPrice" layoutX="148.0" layoutY="113.0" prefHeight="30.0" prefWidth="203.0" promptText="Enter the price here" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
-            <Font name="Calibri" size="14.0" />
+            <Font name="Calibri" size="16.0" />
          </font></TextField>
       <TableView fx:id="tblService" layoutX="36.0" layoutY="258.0" onMouseClicked="#tblServiceOnAction" prefHeight="460.0" prefWidth="994.0">
         <columns>

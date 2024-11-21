@@ -26,7 +26,7 @@
     -fx-font-size: 16;
 }
 
-#txtUsername, #txtPassword, #txtFirstName, #txtLastName, #txtEmail, #txtConPass , #txtPasswordVisible, #txtConfirmPasswordVisible , #txtConfirmPassword{
+#txtUsername, #txtPassword, #txtFirstName, #txtLastName, #txtEmail, #txtConPass , #txtPasswordVisible, #pwfConfirmPassword , #txtConfirmPassword,#pwfPassword{
     -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-border-radius: 15px;

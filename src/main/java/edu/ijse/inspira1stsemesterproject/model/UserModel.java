@@ -73,15 +73,18 @@ public class UserModel {
     }
 
     public boolean updateUser(UserDto userDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(
-                "update user set  first_name = ?, last_name = ?, username = ?, email = ?, password = ? where user_id = ?",
-                userDto.getFirstName(),
-                userDto.getLastName(),
-                userDto.getUsername(),
-                userDto.getEmail(),
-                userDto.getPassword(),
-                userDto.getUserId()
-        );
+        Connection connection = DBConnection.getInstance().getConnection();
+        String sql = "update user set first_name = ?, last_name = ?, username = ?, email = ?, password = ? where user_id = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, userDto.getFirstName());
+        preparedStatement.setString(2, userDto.getLastName());
+        preparedStatement.setString(3, userDto.getUsername());
+        preparedStatement.setString(4, userDto.getEmail());
+        preparedStatement.setString(5, userDto.getPassword());
+        preparedStatement.setString(6, userDto.getUserId());
+
+        return preparedStatement.executeUpdate()>0;
     }
 
     public ArrayList<UserDto> getAllUsers() throws SQLException, ClassNotFoundException {

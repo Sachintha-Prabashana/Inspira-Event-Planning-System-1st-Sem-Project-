@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -57,17 +54,24 @@ public class LoginController implements Initializable {
     private TextField txtPassword;
 
     @FXML
+    private PasswordField pwfPassword;
+
+    @FXML
     private TextField txtUsername;
 
     private final UserModel userModel = new UserModel();
+    private boolean isPasswordVisible = false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         loginPane.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.ENTER){
                 btnLogin.fire();
             }
         });
+
+
     }
 
     @FXML
@@ -128,6 +132,20 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void imgEyeOnClick(MouseEvent event) {
+        if (pwfPassword.isVisible()) {
+            txtPassword.setText(pwfPassword.getText());
+            pwfPassword.setVisible(false);
+            txtPassword.setVisible(true);
+        } else {
+            pwfPassword.setText(txtPassword.getText());
+            txtPassword.setVisible(false);
+            pwfPassword.setVisible(true);
+        }
+    }
+
 
     private void showErrorMessage(String message) {
         lblError.setText(message);
