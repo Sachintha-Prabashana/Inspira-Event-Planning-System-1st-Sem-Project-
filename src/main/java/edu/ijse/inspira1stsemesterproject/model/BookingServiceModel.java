@@ -13,13 +13,9 @@ public class BookingServiceModel {
                 // Save individual booking service details
                 boolean isOrderDetailsSaved = saveBookingServiceDetails(bookingServiceDto);
                 if (!isOrderDetailsSaved) {
-                    // Log the error if saving fails
-                    System.err.println("Failed to save booking service details for booking ID: " + bookingServiceDto.getBookingId());
                     return false;
                 }
-            } catch (SQLException | ClassNotFoundException e) {
-                // Log the exception details
-                System.err.println("Error saving booking service details: " + e.getMessage());
+            } catch (Exception e) {
                 return false;
             }
         }

@@ -193,6 +193,10 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
+        cmbSupplierId.setValue(null);
+        cmbSupplierId.setPromptText("Select Supplier Id");
+
+        refreshPage();
 
     }
 

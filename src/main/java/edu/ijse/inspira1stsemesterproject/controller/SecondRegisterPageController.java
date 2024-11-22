@@ -57,7 +57,7 @@ public class SecondRegisterPageController {
 
     private final UserModel userModel = new UserModel();
 
-    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}";
 
     private static final String USERNAME_PATTERN = "^[a-zA-Z0-9_]{5,15}$";
 
@@ -124,4 +124,7 @@ public class SecondRegisterPageController {
         timeline.play();
     }
 
+    public void imgBackOnAction(MouseEvent mouseEvent) {
+        loadUI("/view/FirstRegisterPage.fxml");
+    }
 }

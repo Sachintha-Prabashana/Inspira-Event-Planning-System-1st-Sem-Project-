@@ -1,7 +1,6 @@
 package edu.ijse.inspira1stsemesterproject.model;
 
 import edu.ijse.inspira1stsemesterproject.dto.EmployeeDto;
-import edu.ijse.inspira1stsemesterproject.dto.EventDto;
 import edu.ijse.inspira1stsemesterproject.util.CrudUtil;
 
 import java.sql.ResultSet;
@@ -79,5 +78,9 @@ public class EmployeeModel {
                 employeeDto.getBookingId(),
                 employeeDto.getEmployeeId()
         );
+    }
+
+    public boolean deleteEmployee(String employeeId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("delete from employee where employee_id =?", employeeId);
     }
 }

@@ -42,15 +42,15 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </TextField>
-      <TableView fx:id="tblBooking" layoutX="30.0" layoutY="255.0" onMouseClicked="#tblBookingOnAction" prefHeight="427.0" prefWidth="1002.0">
+      <TableView fx:id="tblBooking" layoutX="30.0" layoutY="255.0" prefHeight="427.0" prefWidth="1002.0">
          <columns>
             <TableColumn fx:id="clmBookingId" prefWidth="125.59994125366211" text="Booking Id" />
             <TableColumn fx:id="clmCustomerId" prefWidth="132.00001525878906" text="Customer Id" />
             <TableColumn fx:id="clmServiceId" prefWidth="148.79998779296875" text="Service Id" />
             <TableColumn fx:id="clmCapacity" prefWidth="123.20001220703125" text="Capacity" />
-            <TableColumn fx:id="clmVenue" prefWidth="232.79998779296875" text="Venue" />
-            <TableColumn fx:id="clmBookingData" prefWidth="126.4000244140625" text="Booking Date" />
-            <TableColumn fx:id="clmAction" prefWidth="112.79986572265625" text="Action" />
+            <TableColumn fx:id="clmVenue" prefWidth="128.79998779296875" text="Venue" />
+            <TableColumn fx:id="clmBookingData" prefWidth="190.39996337890625" text="Booking Date" />
+            <TableColumn fx:id="clmAction" prefWidth="148.79998779296875" text="Action" />
          </columns>
       </TableView>
       <JFXComboBox fx:id="cmbCustomerId" layoutX="130.0" layoutY="122.0" onAction="#cmbCustomerIdOnAction" prefHeight="30.0" prefWidth="158.0" promptText="Select customer Id" stylesheets="@../style/Style.css" />
@@ -95,7 +95,7 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </TextField>
-      <Button layoutX="883.0" layoutY="190.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnAddToBookingOnAction" prefHeight="32.0" prefWidth="144.0" style="-fx-background-color: #3498db;" text="Add To Booking" textFill="WHITE">
+      <Button layoutX="883.0" layoutY="190.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnAddToBookingOnAction" prefHeight="32.0" prefWidth="144.0" style="-fx-background-color: #6EC207; -fx-background-radius: 10;" text="Add To Booking" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -103,7 +103,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Button layoutX="888.0" layoutY="695.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCompleteBookingOnAction" prefHeight="32.0" prefWidth="144.0" style="-fx-background-color: #2ecc71;" text="Complete Booking" textFill="WHITE">
+      <Button layoutX="874.0" layoutY="695.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCompleteBookingOnAction" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #3498db; -fx-background-radius: 10;" text="Complete Booking" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -111,13 +111,18 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Button layoutX="734.0" layoutY="695.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #e74c3c;" text="Reset" textFill="WHITE">
+      <Button layoutX="527.0" layoutY="695.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 10;" text="Reset" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
+      </Button>
+      <Button layoutX="688.0" layoutY="695.0" mnemonicParsing="false" onAction="#btnGenerateReportOnAction" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: AD49E1; -fx-background-radius: 10;" text="generate Report" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

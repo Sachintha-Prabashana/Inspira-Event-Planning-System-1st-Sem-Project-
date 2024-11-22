@@ -62,32 +62,27 @@
             <TableColumn fx:id="clmEmail" prefWidth="231.19998779296884" text="Email" />
          </columns>
       </TableView>
-      <Button fx:id="btnSave" layoutX="931.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #6EC207;" text="Save">
+      <Button fx:id="btnSave" layoutX="913.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #6EC207;" text="Save">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdate" layoutX="796.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #0D92F4;" text="Update">
+      <Button fx:id="btnUpdate" layoutX="742.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #0D92F4;" text="Update">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="662.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #C62E2E;" text="Delete">
+      <Button fx:id="btnDelete" layoutX="561.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #C62E2E;" text="Delete">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnReset" layoutX="523.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #C738BD;" text="Reset">
+      <Button fx:id="btnReset" layoutX="385.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #C738BD;" text="Reset">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnGenerateRepo" layoutX="129.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnGenerateRepoOnAction" prefHeight="35.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: #7f8c8d;" text="Generate Report">
-         <font>
-            <Font name="Calibri Bold" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnCustomerRepo" layoutX="326.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnCustomerRepoOnAction" prefHeight="35.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: #FF8989;" text="Customer Report">
+      <Button fx:id="btnCustomerRepo" layoutX="132.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnCustomerRepoOnAction" prefHeight="35.0" prefWidth="199.0" style="-fx-background-radius: 10; -fx-background-color: #FF8989;" text="Customer Report">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
@@ -118,7 +113,7 @@
          </font>
       </Label>
       <JFXComboBox fx:id="cmbCustTitle" layoutX="392.0" layoutY="38.0" prefHeight="31.0" prefWidth="130.0" promptText="Choose a title" stylesheets="@../style/Style.css" />
-      <Button fx:id="btnSendMail" layoutX="892.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnSendMailOnAction" prefHeight="35.0" prefWidth="139.0" style="-fx-background-radius: 10; -fx-background-color: #41B3A2;" text="Send Mail">
+      <Button fx:id="btnSendMail" layoutX="845.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnSendMailOnAction" prefHeight="35.0" prefWidth="186.0" style="-fx-background-radius: 10; -fx-background-color: #41B3A2;" text="Send Mail">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>

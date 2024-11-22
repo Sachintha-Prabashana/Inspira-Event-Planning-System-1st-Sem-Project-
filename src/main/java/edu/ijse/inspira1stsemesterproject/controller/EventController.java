@@ -237,6 +237,11 @@ public class EventController implements Initializable {
             txtBudget.setStyle(txtBudget.getStyle() + ";-fx-border-color: red;");
         }
 
+        if (eventDatePicker.getValue() == null || eventDatePicker.getValue().isBefore(LocalDate.now())) {
+            new Alert(Alert.AlertType.ERROR, "Invalid date. Please select a future date..!").show();
+            return;
+        }
+
         String eventType = cmbEventType.getValue();
         int quantity = Integer.parseInt(lblQty.getText());
         int qty = Integer.parseInt(txtQtyToAdd.getText());
@@ -323,12 +328,13 @@ public class EventController implements Initializable {
     }
 
     private void loadBookingIds() throws SQLException, ClassNotFoundException {
-        ArrayList<String> bookingIds = bookingModel.getAllBookingIds();
+        ArrayList<String> bookingIds = bookingModel.getAvailableBookingIds();
 
         ObservableList<String> observableList = FXCollections.observableArrayList();
         observableList.addAll(bookingIds);
         cmbBookingId.setItems(observableList);
     }
+
 
     @FXML
     void cmbItemIdOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -381,6 +387,12 @@ public class EventController implements Initializable {
         String venue = txtVenue.getText();
         java.sql.Date date = java.sql.Date.valueOf(eventDatePicker.getValue());
 
+        boolean isVenueAvailable = eventModel.isVenueAvailable(venue, date);
+        if (!isVenueAvailable) {
+            new Alert(Alert.AlertType.ERROR, "The selected venue is already booked for the selected date.").show();
+            return;
+        }
+
         ArrayList<EventSupplierDto> eventSupplierDtos = new ArrayList<>();
 
         for (EventTM eventTM : eventTMS) {
@@ -414,22 +426,21 @@ public class EventController implements Initializable {
 
         if (isSaved) {
             new Alert(Alert.AlertType.INFORMATION, "Event saved successfully..!").show();
-            RemoveUsedBookingIds(cmbBookingId.getValue());
+            // After event is saved, update the booking status to 'used'
+            String bookingId = cmbBookingId.getValue();
+            boolean isBookingStatusUpdated = bookingModel.updateBookingStatusToUsed(bookingId);
+
+            if (isBookingStatusUpdated) {
+                System.out.println("Booking status updated to 'used' for booking ID: " + bookingId);
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Failed to update booking status to 'used'.").show();
+            }
+
+            // Refresh the page
             refreshPage();
 
         } else {
             new Alert(Alert.AlertType.ERROR, "Failed to save event. Please check item details.").show();
-        }
-    }
-
-    private void RemoveUsedBookingIds(String bookingId) {
-        // Check if the bookingId exists in the ComboBox
-        if (cmbBookingId.getItems().contains(bookingId)) {
-            // Remove the bookingId from the ComboBox
-            cmbBookingId.getItems().remove(bookingId);
-            System.out.println("Booking ID " + bookingId + " removed successfully.");
-        } else {
-            System.out.println("Booking ID " + bookingId + " not found in the ComboBox.");
         }
     }
 
@@ -457,7 +468,7 @@ public class EventController implements Initializable {
         }
     }
 
-    public void eventDatePickerOnAction(ActionEvent actionEvent) {
-
+    public void btnResetOnAction(ActionEvent actionEvent) throws Exception {
+        refreshPage();
     }
 }

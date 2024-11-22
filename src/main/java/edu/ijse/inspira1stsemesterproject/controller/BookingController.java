@@ -1,6 +1,7 @@
 package edu.ijse.inspira1stsemesterproject.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import edu.ijse.inspira1stsemesterproject.db.DBConnection;
 import edu.ijse.inspira1stsemesterproject.dto.BookingDto;
 import edu.ijse.inspira1stsemesterproject.dto.BookingServiceDto;
 import edu.ijse.inspira1stsemesterproject.dto.CustomerDto;
@@ -17,12 +18,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class BookingController implements Initializable {
@@ -112,19 +118,13 @@ public class BookingController implements Initializable {
         // Get the next order ID and set it to the label
         lblBookingId.setText(bookingModel.getNextBookingId());
 
-        // Set the current date to the order date label
-//        orderDate.setText(String.valueOf(LocalDate.now()));
+
         lblDate.setText(LocalDate.now().toString());
 
         // Load customer and item IDs into ComboBoxes
         loadCustomerIds();
         loadServiceIds();
 
-//        ComboBox on action set
-//        cmbCustomerId.setOnAction(e->{
-//            String selectedCusId = cmbCustomerId.getSelectionModel().getSelectedItem();
-//            System.out.println(selectedCusId);
-//        });
 
         // Clear selected customer, item, and their associated labels
         cmbCustomerId.getSelectionModel().clearSelection();
@@ -162,18 +162,16 @@ public class BookingController implements Initializable {
     public void btnAddToBookingOnAction(ActionEvent event) {
         String selectedCustomerId = cmbCustomerId.getValue();
 
-        // If no item is selected, show an error alert and return
         if (selectedCustomerId == null) {
             new Alert(Alert.AlertType.ERROR, "Please select customer..!").show();
-            return; // Exit the method if no item is selected.
+            return;
         }
 
         String selectedServiceId = cmbServiceId.getValue();
 
-        // If no item is selected, show an error alert and return
         if (selectedServiceId == null) {
             new Alert(Alert.AlertType.ERROR, "Please select service..!").show();
-            return; // Exit the method if no item is selected.
+            return;
         }
 
         String capacityPattern = "^[0-9]+$";
@@ -214,7 +212,6 @@ public class BookingController implements Initializable {
                 btn
         );
 
-        // Set an action for the "Remove" button, which removes the item from the cart when clicked.
         btn.setOnAction(actionEvent -> {
 
             // Remove the item from the cart's observable list (cartTMS).
@@ -246,6 +243,7 @@ public class BookingController implements Initializable {
         Date dateOfBooking = Date.valueOf(lblDate.getText());
         String customerId = cmbCustomerId.getValue();
         String serviceId = cmbServiceId.getValue();
+        String status = "available";
 
         // List to hold order details
         ArrayList<BookingServiceDto> bookingServiceDtos = new ArrayList<>();
@@ -271,24 +269,30 @@ public class BookingController implements Initializable {
                 capacity,
                 venue,
                 dateOfBooking,
+                status,
                 bookingServiceDtos
         );
 
         boolean isSaved = bookingModel.saveBooking(bookingDto);
 
         if (isSaved) {
-            new Alert(Alert.AlertType.INFORMATION, "Booking saved..!").show();
+            new Alert(Alert.AlertType.INFORMATION, "Booking saved with status 'available'..!").show();
 
-            // Reset the page after placing the order
             refreshPage();
         } else {
-            new Alert(Alert.AlertType.ERROR, "Booking fail..!").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to save booking..!").show();
         }
     }
 
     @FXML
-    void btnResetOnAction(ActionEvent event) {
+    void btnResetOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        cmbCustomerId.setValue(null);
+        cmbCustomerId.setPromptText("Select customer id");
 
+        cmbServiceId.setValue(null);
+        cmbServiceId.setPromptText("Select service id");
+
+        refreshPage();
     }
 
     @FXML
@@ -310,18 +314,32 @@ public class BookingController implements Initializable {
         String selectedServiceId = cmbServiceId.getSelectionModel().getSelectedItem();
         ServiceDto serviceDto = serviceModel.findById(selectedServiceId);
 
-        // If customer found (customerDTO not null)
         if (serviceDto != null) {
 
-            // FIll customer related labels
             lblServiceType.setText(serviceDto.getServiceType());
         }
     }
 
-    @FXML
-    void tblBookingOnAction(MouseEvent event) {
 
+    public void btnGenerateReportOnAction(ActionEvent actionEvent) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            Map<String, Object> parameters = new HashMap<>();
+
+            parameters.put("today", LocalDate.now().toString());
+            parameters.put("TODAY", LocalDate.now().toString());
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/reports/BookingServiceReport.jrxml"));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    parameters,
+                    connection
+            );
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException | ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
-
-
 }

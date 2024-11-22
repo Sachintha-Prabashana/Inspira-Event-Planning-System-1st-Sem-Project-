@@ -82,7 +82,7 @@ public class FirstRegisterPageController {
             userDto.setFirstName(txtFirstName.getText());
             userDto.setLastName(txtLastName.getText());
 
-            loadUI("/view/RegisterSecondPage.fxml");
+            loadUI("/view/SecondRegisterPage.fxml");
         }
     }
 

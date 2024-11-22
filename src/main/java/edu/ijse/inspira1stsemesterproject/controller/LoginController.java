@@ -60,7 +60,6 @@ public class LoginController implements Initializable {
     private TextField txtUsername;
 
     private final UserModel userModel = new UserModel();
-    private boolean isPasswordVisible = false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,7 +82,7 @@ public class LoginController implements Initializable {
         if(areFieldsEmpty()){
             showErrorMessage("Please fill all the required fields");
         }else {
-            String password = txtPassword.getText();
+            String password = pwfPassword.getText();
             String username = txtUsername.getText();
             boolean isMatch = false;
 
@@ -104,11 +103,12 @@ public class LoginController implements Initializable {
         }
     }
     private boolean areFieldsEmpty() {
-        return txtUsername.getText().isEmpty() || txtPassword.getText().isEmpty();
+        return txtUsername.getText().isEmpty() || pwfPassword.getText().isEmpty();
     }
 
     @FXML
     void lblCreateAccOnClick(MouseEvent event) {
+        loadUI("/view/FirstRegisterPage.fxml");
 
     }
 

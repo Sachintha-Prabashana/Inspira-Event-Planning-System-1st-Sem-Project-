@@ -24,25 +24,25 @@
       </ImageView>
       <Label fx:id="lblWelcome" layoutX="193.0" layoutY="113.0" text="Welcome to Inspira" textFill="#34495e">
          <font>
-            <Font name="Comic Sans MS Bold" size="36.0" />
+            <Font name="Yu Gothic UI Semibold" size="48.0" />
          </font>
       </Label>
       <Label fx:id="lblLogin" layoutX="98.0" layoutY="190.0" text="Log in to continue." textFill="#34495e">
          <font>
-            <Font name="Comic Sans MS Bold" size="36.0" />
+            <Font name="Yu Gothic UI Semibold" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="lblNotAcc" layoutX="98.0" layoutY="235.0" text="Don't have an account?">
+      <Label fx:id="lblNotAcc" layoutX="96.0" layoutY="248.0" text="Don't have an account?">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblUsername" layoutX="99.0" layoutY="287.0" text="Username">
+      <Label fx:id="lblUsername" layoutX="99.0" layoutY="293.0" text="Username">
          <font>
             <Font name="Serif Regular" size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername" layoutX="98.0" layoutY="319.0" prefHeight="46.0" prefWidth="503.0" style="-fx-background-radius: 15;" stylesheets="@../style/Style.css">
+      <TextField fx:id="txtUsername" layoutX="98.0" layoutY="327.0" prefHeight="46.0" prefWidth="503.0" style="-fx-background-radius: 15;" stylesheets="@../style/Style.css">
          <font>
             <Font size="17.0" />
          </font>
@@ -67,7 +67,7 @@
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="lblCreateAcc" layoutX="304.0" layoutY="235.0" onMouseClicked="#lblCreateAccOnClick" text="Create a new Account" textFill="#2980b9">
+      <Label fx:id="lblCreateAcc" layoutX="301.0" layoutY="248.0" onMouseClicked="#lblCreateAccOnClick" text="Create a new Account" textFill="#2980b9">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>

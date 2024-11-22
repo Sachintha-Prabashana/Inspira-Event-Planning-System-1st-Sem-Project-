@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -23,6 +24,7 @@ public class DashBoardIntroController {
 
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/LogInPage.fxml"));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Image/icon-inspira.png")));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();

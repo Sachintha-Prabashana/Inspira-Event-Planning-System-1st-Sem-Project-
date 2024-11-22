@@ -20,6 +20,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class EmployeeFormController implements Initializable {
@@ -196,8 +197,23 @@ public class EmployeeFormController implements Initializable {
 
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
+    void btnDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String employeeId = lblEmployeeIdData.getText();
 
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this employee?", ButtonType.YES, ButtonType.NO);
+        Optional<ButtonType> buttonType = alert.showAndWait();
+
+        if (buttonType.get() == ButtonType.YES) {
+
+            boolean isDeleted = employeeModel.deleteEmployee(employeeId);
+
+            if (isDeleted) {
+                new Alert(Alert.AlertType.INFORMATION, "Employee deleted...!").show();
+                refreshPage();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail to delete Employee...!").show();
+            }
+        }
     }
 
     @FXML

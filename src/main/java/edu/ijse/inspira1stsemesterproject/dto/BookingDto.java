@@ -17,6 +17,7 @@ public class BookingDto {
     private int capacity;
     private String venue;
     private Date bookingDate;
+    private String status;
 
     private ArrayList<BookingServiceDto> bookingServiceDtos;
 

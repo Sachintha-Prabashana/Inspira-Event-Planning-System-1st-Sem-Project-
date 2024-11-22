@@ -25,12 +25,12 @@
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.9684210419654846" green="0.9684210419654846" blue="0.9684210419654846" />
+                              <Color red="1.0" green="0.43529412150382996" blue="0.3803921639919281" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.7263157963752747" green="0.09684210270643234" blue="0.6423859596252441" />
+                              <Color red="1.0" green="0.9215686321258545" blue="0.23137255012989044" />
                            </color>
                         </Stop>
                      </stops>
@@ -51,22 +51,6 @@
                      </font>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" onAction="#btnEmployeeOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Employee">
-                     <VBox.margin>
-                        <Insets left="65.0" top="30.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Calibri Bold" size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#btnEventOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event">
-                     <VBox.margin>
-                        <Insets left="65.0" top="30.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Calibri Bold" size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#btnBookingOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking">
                      <VBox.margin>
                         <Insets left="65.0" top="30.0" />
                      </VBox.margin>
@@ -105,6 +89,22 @@
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
                      </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnBookingOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Booking">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="65.0" top="30.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#btnEventOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #5AB2FF; -fx-background-radius: 8; -fx-border-color: #3ABEF9; -fx-border-radius: 8;" text="Event">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="65.0" top="30.0" />
+                     </VBox.margin>
                   </JFXButton>
                </children>
             </VBox>

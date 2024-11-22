@@ -276,11 +276,6 @@ public class CustomerController implements Initializable {
     }
 
     @FXML
-    void btnGenerateRepoOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnResetOnAction(ActionEvent event) {
         refreshPage();
     }

@@ -24,6 +24,18 @@ public class EventModel {
         return "E001";
     }
 
+    public boolean isVenueAvailable(String venue, java.sql.Date date) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute(
+                "SELECT COUNT(*) FROM Event WHERE venue = ? AND event_date = ?",
+                venue, date
+        );
+        if (resultSet.next()) {
+            return resultSet.getInt(1) == 0; // Venue is available if count is 0
+        }
+        return false;
+    }
+
+
 
     public boolean saveEvent(EventDto eventDto) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getInstance().getConnection();
